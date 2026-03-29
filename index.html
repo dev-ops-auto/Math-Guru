@@ -1,1089 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MathGuru India – Class 1–12 Maths Master Portal</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MathGuru India – Class 1–12 Maths Master Portal by Pawan Rajput</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0a0e1a;
-  --surface: #111827;
-  --card: #1a2235;
-  --border: #2a3555;
-  --accent: #f59e0b;
-  --accent2: #06b6d4;
-  --accent3: #10b981;
-  --accent4: #f43f5e;
-  --text: #e2e8f0;
-  --muted: #94a3b8;
-  --heading: #Baloo 2, cursive;
-  --body: 'Nunito', sans-serif;
-  --mono: 'JetBrains Mono', monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}
-
-/* ── ANIMATED BG ── */
-body::before{
-  content:'';position:fixed;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(245,158,11,.08) 0%,transparent 60%),
-             radial-gradient(ellipse 60% 50% at 80% 80%,rgba(6,182,212,.07) 0%,transparent 60%);
-  pointer-events:none;z-index:0;
-}
-
-/* ── NAV ── */
-nav{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(10,14,26,.92);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  padding:0 1.5rem;
-}
-.nav-inner{
-  max-width:1400px;margin:0 auto;
-  display:flex;align-items:center;gap:1rem;
-  height:64px;overflow-x:auto;
-}
-.logo{
-  font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;
-  color:var(--accent);white-space:nowrap;margin-right:.5rem;
-  text-shadow:0 0 20px rgba(245,158,11,.4);
-}
-.logo span{color:var(--accent2);}
-.nav-tabs{display:flex;gap:.25rem;flex:1;overflow-x:auto;padding-bottom:2px;}
-.nav-tabs::-webkit-scrollbar{height:2px}
-.nav-tabs::-webkit-scrollbar-thumb{background:var(--border)}
-.tab-btn{
-  white-space:nowrap;padding:.45rem .85rem;border-radius:8px;
-  border:1px solid transparent;background:transparent;
-  color:var(--muted);cursor:pointer;font-family:var(--body);
-  font-size:.82rem;font-weight:600;transition:all .2s;
-}
-.tab-btn:hover{color:var(--text);background:rgba(255,255,255,.06);border-color:var(--border)}
-.tab-btn.active{color:var(--bg);background:var(--accent);border-color:var(--accent);font-weight:700;}
-.tab-btn.special{color:var(--accent4)}
-.tab-btn.special.active{background:var(--accent4);border-color:var(--accent4);color:#fff}
-
-/* ── SECTIONS ── */
-.section{display:none;max-width:1400px;margin:0 auto;padding:2rem 1.5rem;position:relative;z-index:1}
+:root{--bg:#07101f;--bg2:#0a1428;--surf:#101a31;--card:#15213d;--card2:#182642;--line:#223458;--txt:#e6edf7;--muted:#9db0ca;--gold:#f59e0b;--cyan:#06b6d4;--green:#10b981;--red:#f43f5e;--vio:#a855f7;--sh:0 18px 60px rgba(0,0,0,.35);--mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 20% 10%,rgba(245,158,11,.08),transparent 30%),radial-gradient(circle at 80% 90%,rgba(6,182,212,.08),transparent 28%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--txt);font-family:'Nunito',sans-serif;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:36px 36px;mask-image:linear-gradient(180deg,rgba(0,0,0,.55),transparent 90%);pointer-events:none;z-index:0}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background:#09111f}::-webkit-scrollbar-thumb{background:#2d3f66;border-radius:99px}
+.wrap{position:relative;z-index:1;max-width:1540px;margin:0 auto;padding:0 16px 24px}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(7,16,31,.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
+.navin{max-width:1540px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;overflow-x:auto;white-space:nowrap}
+.navin::-webkit-scrollbar{height:4px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Baloo 2',cursive;font-size:1.45rem;font-weight:800;color:var(--gold);text-shadow:0 0 18px rgba(245,158,11,.25)}
+.logo b{color:var(--cyan)}
+.navbtn,.subbtn,.chip,.quizopt,.btn{font-family:'Nunito',sans-serif}
+.navbtn{border:1px solid transparent;background:transparent;color:var(--muted);padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700;font-size:.86rem;transition:.18s ease}
+.navbtn:hover{background:rgba(255,255,255,.04);color:var(--txt);border-color:rgba(255,255,255,.06)}
+.navbtn.active{background:linear-gradient(135deg,var(--gold),#fbbf24);color:#06111f;border-color:transparent;box-shadow:0 8px 24px rgba(245,158,11,.15)}
+.navbtn.pro{color:#ffd7e2;background:rgba(244,63,94,.08);border-color:rgba(244,63,94,.18)}
+.navbtn.pro.active{background:linear-gradient(135deg,var(--red),#fb7185);color:#fff}
+.section{display:none;padding:20px 0 30px}
 .section.active{display:block}
-
-/* ── HERO ── */
-.hero{
-  text-align:center;padding:4rem 1rem 3rem;
-  background:linear-gradient(135deg,rgba(245,158,11,.05),rgba(6,182,212,.05));
-  border-radius:24px;border:1px solid var(--border);margin-bottom:2rem;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'∑ π ∫ √ ∞ ÷ × ± ≈ ≠ ≤ ≥ Δ θ φ λ μ σ';
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;color:rgba(245,158,11,.04);letter-spacing:2rem;
-  line-height:3;word-break:break-all;pointer-events:none;font-family:var(--mono);
-}
-.hero h1{
-  font-family:'Baloo 2',cursive;font-size:clamp(2rem,5vw,3.5rem);
-  font-weight:800;line-height:1.1;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:.75rem;
-}
-.hero p{color:var(--muted);font-size:1.1rem;max-width:600px;margin:0 auto 2rem;}
-.hero-stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.stat-pill{
-  padding:.4rem 1.2rem;border-radius:99px;
-  background:rgba(255,255,255,.05);border:1px solid var(--border);
-  font-size:.85rem;font-weight:700;
-}
-.stat-pill span{color:var(--accent);}
-
-/* ── SECTION TITLE ── */
-.sec-title{
-  font-family:'Baloo 2',cursive;font-size:1.6rem;font-weight:800;
-  color:var(--accent);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem;
-}
-.sec-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent);margin-left:.5rem;}
-
-/* ── CARDS GRID ── */
-.cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
-.card{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  padding:1.25rem;cursor:pointer;transition:all .25s;
-}
-.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(245,158,11,.12);}
-.card-icon{font-size:2rem;margin-bottom:.5rem;}
-.card h3{font-family:'Baloo 2',cursive;font-size:1.05rem;color:var(--accent);margin-bottom:.35rem;}
-.card p{font-size:.82rem;color:var(--muted);line-height:1.5;}
-.card-tag{
-  display:inline-block;margin-top:.6rem;padding:.2rem .6rem;border-radius:99px;
-  font-size:.72rem;font-weight:700;background:rgba(6,182,212,.15);color:var(--accent2);
-}
-
-/* ── FORMULA BOX ── */
-.formula-box{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;
-  padding:1.25rem;margin-bottom:1rem;
-}
-.formula-box h4{color:var(--accent2);margin-bottom:.75rem;font-size:1rem;font-family:'Baloo 2',cursive;}
-.formula-item{
-  display:flex;align-items:flex-start;gap:.75rem;
-  padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);
-  font-size:.88rem;
-}
-.formula-item:last-child{border:none}
-.formula-item .label{
-  color:var(--muted);font-size:.78rem;width:140px;flex-shrink:0;font-weight:600;
-}
-.formula-item .val{
-  font-family:var(--mono);color:var(--accent);font-size:.85rem;
-  background:rgba(245,158,11,.07);padding:.15rem .5rem;border-radius:6px;
-  flex:1;word-break:break-all;
-}
-
-/* ── TABLES GRID ── */
-.tables-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
-.table-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:1rem;
-}
-.table-card h4{
-  text-align:center;font-family:'Baloo 2',cursive;font-size:1.1rem;
-  color:var(--accent);margin-bottom:.75rem;
-}
-.table-card .t-row{
-  display:flex;justify-content:space-between;
-  font-family:var(--mono);font-size:.8rem;
-  padding:.25rem .4rem;border-radius:6px;
-  transition:background .15s;
-}
-.table-card .t-row:hover{background:rgba(245,158,11,.1)}
-.table-card .t-row .result{color:var(--accent2);font-weight:700;}
-
-/* ── PRACTICE / QUIZ ── */
-.quiz-area{
-  background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;
-}
-.quiz-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;}
-.quiz-filters{display:flex;gap:.5rem;flex-wrap:wrap;}
-.filter-btn{
-  padding:.35rem .85rem;border-radius:99px;border:1px solid var(--border);
-  background:transparent;color:var(--muted);cursor:pointer;font-family:var(--body);
-  font-size:.8rem;font-weight:600;transition:all .2s;
-}
-.filter-btn.active,.filter-btn:hover{background:var(--accent2);border-color:var(--accent2);color:var(--bg)}
-.q-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:14px;
-  padding:1.25rem;margin-bottom:1rem;
-}
-.q-num{font-size:.75rem;color:var(--muted);font-weight:700;margin-bottom:.4rem;}
-.q-text{font-size:1rem;color:var(--text);margin-bottom:1rem;line-height:1.5;}
-.q-options{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
-.q-opt{
-  padding:.6rem .85rem;border-radius:10px;border:1px solid var(--border);
-  background:transparent;color:var(--text);cursor:pointer;font-family:var(--body);
-  font-size:.88rem;text-align:left;transition:all .2s;
-}
-.q-opt:hover{border-color:var(--accent2);background:rgba(6,182,212,.08);}
-.q-opt.correct{border-color:var(--accent3)!important;background:rgba(16,185,129,.15)!important;color:var(--accent3)!important;}
-.q-opt.wrong{border-color:var(--accent4)!important;background:rgba(244,63,94,.1)!important;color:var(--accent4)!important;}
-.q-explanation{
-  margin-top:.75rem;padding:.75rem;border-radius:10px;
-  background:rgba(6,182,212,.08);border:1px solid rgba(6,182,212,.2);
-  font-size:.83rem;color:var(--muted);display:none;line-height:1.5;
-}
-.quiz-nav{display:flex;gap:.75rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap;}
-.btn{
-  padding:.6rem 1.4rem;border-radius:10px;border:none;cursor:pointer;
-  font-family:var(--body);font-weight:700;font-size:.9rem;transition:all .2s;
-}
-.btn-primary{background:var(--accent);color:var(--bg);}
-.btn-primary:hover{background:#d97706;transform:translateY(-1px);}
-.btn-secondary{background:var(--surface);border:1px solid var(--border);color:var(--text);}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
-.btn-cyan{background:var(--accent2);color:var(--bg);}
-.btn-cyan:hover{opacity:.85;}
-.score-badge{
-  display:inline-flex;align-items:center;gap:.4rem;
-  padding:.4rem .9rem;border-radius:99px;
-  background:rgba(16,185,129,.12);border:1px solid var(--accent3);
-  font-size:.85rem;font-weight:700;color:var(--accent3);
-}
-
-/* ── PROGRESS ── */
-.progress-bar{height:6px;background:var(--border);border-radius:99px;margin:.5rem 0;}
-.progress-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .4s;}
-
-/* ── VIDEO SECTION ── */
-.video-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));}
-.video-card{
-  background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;
-  transition:all .25s;cursor:pointer;
-}
-.video-card:hover{border-color:var(--accent2);transform:translateY(-3px);}
-.video-thumb{
-  width:100%;aspect-ratio:16/9;background:var(--surface);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.video-thumb .math-bg{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:3rem;opacity:.08;font-family:var(--mono);
-}
-.play-btn{
-  width:52px;height:52px;border-radius:50%;
-  background:rgba(245,158,11,.9);display:flex;align-items:center;justify-content:center;
-  font-size:1.2rem;position:relative;z-index:1;
-  box-shadow:0 0 20px rgba(245,158,11,.4);transition:transform .2s;
-}
-.video-card:hover .play-btn{transform:scale(1.1);}
-.video-info{padding:1rem;}
-.video-info h4{font-family:'Baloo 2',cursive;font-size:.95rem;margin-bottom:.3rem;color:var(--text);}
-.video-info p{font-size:.78rem;color:var(--muted);}
-.video-info .v-tag{
-  display:inline-block;margin-top:.4rem;padding:.15rem .5rem;border-radius:99px;
-  font-size:.7rem;font-weight:700;background:rgba(244,63,94,.12);color:var(--accent4);
-}
-
-/* ── TIPS ── */
-.tips-list{display:grid;gap:.75rem;}
-.tip-item{
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
-  padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:.85rem;
-  transition:border-color .2s;
-}
-.tip-item:hover{border-color:var(--accent3);}
-.tip-num{
-  width:32px;height:32px;flex-shrink:0;border-radius:8px;
-  background:rgba(16,185,129,.12);border:1px solid var(--accent3);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:.8rem;font-weight:700;color:var(--accent3);
-}
-.tip-item h5{color:var(--text);font-size:.92rem;margin-bottom:.2rem;}
-.tip-item p{color:var(--muted);font-size:.82rem;line-height:1.5;}
-.tip-item .mono{font-family:var(--mono);color:var(--accent);font-size:.82rem;}
-
-/* ── ABOUT PAGE ── */
-.about-hero{
-  display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;
-  background:var(--card);border:1px solid var(--border);border-radius:20px;
-  padding:2.5rem;margin-bottom:2rem;
-}
-@media(max-width:640px){.about-hero{grid-template-columns:1fr}}
-.about-avatar{
-  width:180px;height:180px;border-radius:50%;margin:0 auto;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex;align-items:center;justify-content:center;font-size:5rem;
-  box-shadow:0 0 40px rgba(245,158,11,.3);border:4px solid var(--accent);
-}
-.about-text h2{font-family:'Baloo 2',cursive;font-size:2rem;color:var(--accent);margin-bottom:.4rem;}
-.about-text .role{color:var(--accent2);font-weight:700;margin-bottom:.75rem;}
-.about-text p{color:var(--muted);line-height:1.7;margin-bottom:1rem;}
-.contact-cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));}
-.contact-card{
-  background:var(--card);border:1px solid var(--border);border-radius:14px;
-  padding:1.25rem;display:flex;align-items:center;gap:1rem;
-  transition:all .2s;
-}
-.contact-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-.contact-icon{
-  width:48px;height:48px;border-radius:12px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
-}
-.contact-icon.phone{background:rgba(16,185,129,.12);border:1px solid var(--accent3);}
-.contact-icon.email{background:rgba(6,182,212,.12);border:1px solid var(--accent2);}
-.contact-card h5{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem;}
-.contact-card p{color:var(--text);font-weight:700;font-size:.95rem;}
-.contact-card a{color:var(--accent2);text-decoration:none;}
-.contact-card a:hover{text-decoration:underline;}
-
-/* ── RESPONSIVE ── */
-@media(max-width:640px){
-  .q-options{grid-template-columns:1fr}
-  .nav-inner{gap:.25rem}
-  .hero h1{font-size:1.8rem}
-}
-
-/* ── BADGE ── */
-.badge{
-  display:inline-block;padding:.15rem .55rem;border-radius:6px;
-  font-size:.7rem;font-weight:700;margin-left:.4rem;
-  background:rgba(244,63,94,.15);color:var(--accent4);
-}
-.badge.green{background:rgba(16,185,129,.15);color:var(--accent3);}
-.badge.blue{background:rgba(6,182,212,.15);color:var(--accent2);}
-
-/* ── ACCORDION ── */
-.acc-item{
-  background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:.6rem;overflow:hidden;
-}
-.acc-head{
-  padding:1rem 1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
-  font-weight:700;color:var(--text);transition:background .2s;font-size:.93rem;
-}
-.acc-head:hover{background:rgba(255,255,255,.03);}
-.acc-body{
-  padding:0 1.25rem;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s;
-  font-size:.85rem;color:var(--muted);line-height:1.7;
-}
-.acc-body.open{max-height:900px;padding:0 1.25rem 1rem;}
-
-/* ── SCROLL ── */
-::-webkit-scrollbar{width:6px;height:6px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+.hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,rgba(245,158,11,.09),rgba(6,182,212,.08));border-radius:26px;padding:34px 22px;box-shadow:var(--sh);margin:18px 0}
+.hero:before{content:'∑  π  ∫  √  ∞  △  ◇  ⊕  ×';position:absolute;inset:auto 0 10px 0;text-align:center;font-family:var(--mono);font-size:clamp(1.1rem,2vw,1.8rem);letter-spacing:.6rem;color:rgba(255,255,255,.05);pointer-events:none;white-space:nowrap;overflow:hidden}
+.hero h1{margin:0 0 10px;font-family:'Baloo 2',cursive;font-size:clamp(2rem,4vw,3.35rem);line-height:1.02;background:linear-gradient(90deg,var(--gold),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{margin:0 auto 18px;max-width:820px;color:var(--muted);font-size:1rem;line-height:1.7}
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.badge{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--txt);font-size:.82rem;font-weight:700}
+.badge span{color:var(--gold)}
+.topbar{display:grid;grid-template-columns:1.3fr .7fr;gap:14px;align-items:stretch;margin-top:16px}
+@media (max-width: 980px){.topbar{grid-template-columns:1fr}}
+.panel{background:rgba(16,26,49,.75);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;box-shadow:var(--sh)}
+.searchrow{display:flex;gap:10px;flex-wrap:wrap}
+.search{flex:1;min-width:240px;background:#0d172c;border:1px solid rgba(255,255,255,.08);color:var(--txt);padding:13px 14px;border-radius:12px;outline:none;font-size:.95rem}
+.search::placeholder{color:#7f90ab}
+.chip{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--muted);padding:11px 14px;border-radius:12px;font-weight:700;cursor:pointer;transition:.18s ease}
+.chip:hover,.chip.active{border-color:rgba(6,182,212,.35);background:rgba(6,182,212,.1);color:#d8fbff}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+@media (max-width: 720px){.meta{grid-template-columns:repeat(2,1fr)}}
+.stat{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font-size:1.25rem;color:#fff;margin-bottom:4px}
+.stat span{color:var(--muted);font-size:.82rem}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 14px;flex-wrap:wrap}
+.hd h2{margin:0;font-family:'Baloo 2',cursive;font-size:1.5rem;color:var(--gold);display:flex;align-items:center;gap:10px}
+.hd h2:after{content:'';height:2px;width:120px;background:linear-gradient(90deg,var(--gold),transparent);display:inline-block}
+.hd p{margin:0;color:var(--muted);font-size:.92rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:16px;box-shadow:var(--sh);transition:.2s ease;cursor:pointer;min-height:168px;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);border-color:rgba(245,158,11,.35)}
+.card:before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.04),transparent 42%);pointer-events:none}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;margin-bottom:12px;background:rgba(245,158,11,.11);border:1px solid rgba(245,158,11,.15)}
+.card h3{margin:0 0 8px;font-family:'Baloo 2',cursive;color:#ffd37a;font-size:1.08rem}
+.card p{margin:0;color:var(--muted);line-height:1.55;font-size:.9rem}
+.tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:999px;font-size:.72rem;font-weight:800;color:#d7ecff;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.18)}
+.tag.red{background:rgba(244,63,94,.12);border-color:rgba(244,63,94,.18);color:#ffd7de}
+.subtabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px;background:rgba(16,26,49,.75);border:1px solid rgba(255,255,255,.08);border-radius:16px;margin-bottom:14px}
+.subbtn{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:var(--muted);padding:9px 12px;border-radius:11px;cursor:pointer;font-weight:800;font-size:.8rem;transition:.18s ease}
+.subbtn:hover{border-color:rgba(6,182,212,.35);color:#d8fbff}
+.subbtn.active{background:linear-gradient(135deg,var(--cyan),#67e8f9);border-color:transparent;color:#04111a}
+.subsection{display:none}
+.subsection.active{display:block}
+.box{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;box-shadow:var(--sh);margin-bottom:14px}
+.box h3,.box h4{margin:0 0 12px;font-family:'Baloo 2',cursive;color:var(--cyan)}
+.kv{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start}
+.kv:last-child{border-bottom:none}
+.k{flex:0 0 190px;color:#b7c7de;font-weight:800;font-size:.82rem}
+.v{flex:1;color:#f0f5ff;font-family:var(--mono);font-size:.83rem;word-break:break-word}
+@media (max-width: 680px){.kv{display:block}.k{margin-bottom:4px;flex:unset}}
+.defgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.def{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px;min-height:114px}
+.def h5{margin:0 0 8px;font-family:'Baloo 2',cursive;color:#d7f7ff;font-size:1rem}
+.def p{margin:0;color:var(--muted);line-height:1.6;font-size:.88rem}
+.tables{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.tbl{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px}
+.tbl h4{margin:0 0 10px;text-align:center;font-family:'Baloo 2',cursive;color:#ffe29f}
+.row{display:flex;justify-content:space-between;gap:8px;padding:3px 0;font-family:var(--mono);font-size:.77rem;color:#d9e4f1}
+.row span:last-child{color:#8cf0ff;font-weight:700}
+.quiz{display:grid;grid-template-columns:1fr 280px;gap:14px;align-items:start}
+@media (max-width: 980px){.quiz{grid-template-columns:1fr}}
+.qcard{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px;box-shadow:var(--sh)}
+.qhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.progress{height:8px;background:#0b1326;border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,.06);width:260px;max-width:100%}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--cyan));transition:width .25s ease}
+.qno{font-size:.8rem;color:var(--muted);font-weight:800}
+.qtext{font-size:1rem;line-height:1.65;margin:10px 0 14px;color:#f5f8ff}
+.quizopt{width:100%;text-align:left;padding:12px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);color:#eaf0fb;cursor:pointer;margin:8px 0;font-weight:700;transition:.16s ease}
+.quizopt:hover{border-color:rgba(6,182,212,.35);background:rgba(6,182,212,.07)}
+.quizopt.ok{border-color:rgba(16,185,129,.4)!important;background:rgba(16,185,129,.12)!important;color:#a8f5d5!important}
+.quizopt.no{border-color:rgba(244,63,94,.4)!important;background:rgba(244,63,94,.12)!important;color:#ffb9c5!important}
+.explain{display:none;margin-top:12px;padding:12px;border-radius:12px;background:rgba(6,182,212,.09);border:1px solid rgba(6,182,212,.18);color:#d6f8ff;line-height:1.6;font-size:.88rem}
+.ctrls{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{padding:11px 14px;border-radius:12px;border:none;cursor:pointer;font-weight:800;font-size:.88rem;transition:.18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#fbbf24);color:#08111f}
+.btn.blue{background:linear-gradient(135deg,var(--cyan),#67e8f9);color:#04111a}
+.btn.dark{background:#0d172c;color:#e9f1ff;border:1px solid rgba(255,255,255,.08)}
+.side{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px;box-shadow:var(--sh)}
+.side h3{margin:0 0 10px;font-family:'Baloo 2',cursive;color:#ffd58d}
+.side p{margin:0 0 10px;color:var(--muted);line-height:1.65;font-size:.9rem}
+.side .mini{display:grid;gap:10px}
+.note{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px}
+.note b{display:block;margin-bottom:3px;color:#fff}
+.note span{color:var(--muted);font-size:.86rem;line-height:1.55}
+.videoGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.video{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;box-shadow:var(--sh);cursor:pointer;transition:.2s ease}
+.video:hover{transform:translateY(-3px);border-color:rgba(168,85,247,.35)}
+.thumb{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(245,158,11,.14),rgba(6,182,212,.12));display:flex;align-items:center;justify-content:center;position:relative}
+.play{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:rgba(245,158,11,.94);color:#06111f;font-size:1.1rem;box-shadow:0 0 22px rgba(245,158,11,.35);transition:.2s ease}
+.video:hover .play{transform:scale(1.07)}
+.vbody{padding:14px}
+.vbody h4{margin:0 0 6px;font-family:'Baloo 2',cursive;color:#ffd58d}
+.vbody p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.55}
+.vtag{display:inline-block;margin-top:10px;padding:5px 9px;border-radius:999px;font-size:.7rem;font-weight:800;color:#d6f8ff;background:rgba(6,182,212,.12);border:1px solid rgba(6,182,212,.16)}
+.faq{display:grid;gap:10px}
+.acc{background:rgba(16,26,49,.8);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden}
+.accq{padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;color:#eef4ff}
+.acca{padding:0 16px;max-height:0;overflow:hidden;transition:max-height .32s ease,padding .2s ease;color:var(--muted);line-height:1.7;font-size:.9rem}
+.acca.open{padding:0 16px 14px;max-height:220px}
+.about{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:start}
+@media (max-width: 920px){.about{grid-template-columns:1fr}}
+.avatar{width:168px;height:168px;border-radius:50%;margin:0 auto 14px;background:linear-gradient(135deg,var(--gold),var(--cyan));display:grid;place-items:center;font-family:'Baloo 2',cursive;font-size:4rem;font-weight:800;color:#07111f;box-shadow:0 0 40px rgba(245,158,11,.18);border:4px solid rgba(255,255,255,.1)}
+.center{text-align:center}
+.name{font-family:'Baloo 2',cursive;font-size:1.75rem;color:#ffe09e;margin:0}
+.role{color:#8bdff1;font-weight:800;font-size:.85rem;margin:4px 0 10px}
+.links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.link{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:#fff;text-decoration:none;font-weight:800;font-size:.84rem;transition:.18s ease}
+.link:hover{transform:translateY(-2px)}
+.link.yt{border-color:rgba(255,0,0,.25);color:#ff8d8d}.link.fb{border-color:rgba(24,119,242,.25);color:#8abfff}.link.ig{border-color:rgba(225,48,108,.25);color:#ff9acc}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0 0}
+.pill{padding:5px 8px;border-radius:999px;font-size:.7rem;font-weight:800}
+.pill.g{background:rgba(16,185,129,.12);color:#a8f5d5;border:1px solid rgba(16,185,129,.18)}
+.pill.b{background:rgba(6,182,212,.12);color:#ccf9ff;border:1px solid rgba(6,182,212,.18)}
+.pill.p{background:rgba(168,85,247,.12);color:#ead0ff;border:1px solid rgba(168,85,247,.18)}
+.footer{padding:24px 0 34px;color:var(--muted);text-align:center;font-size:.85rem}
+.small{font-family:var(--mono);font-size:.78rem;color:#8ddff1}
+.hide{display:none!important}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-<div class="nav-inner">
-  <div class="logo">Math<span>Guru</span></div>
-  <div class="nav-tabs" id="navTabs">
-    <button class="tab-btn active" onclick="showTab('home')">🏠 Home</button>
-    <button class="tab-btn" onclick="showTab('tables')">× Tables 1–25</button>
-    <button class="tab-btn" onclick="showTab('class1')">Class 1–2</button>
-    <button class="tab-btn" onclick="showTab('class3')">Class 3–5</button>
-    <button class="tab-btn" onclick="showTab('class6')">Class 6–8</button>
-    <button class="tab-btn" onclick="showTab('class9')">Class 9–10</button>
-    <button class="tab-btn" onclick="showTab('class11')">Class 11–12</button>
-    <button class="tab-btn" onclick="showTab('formulas')">📐 Formulas</button>
-    <button class="tab-btn" onclick="showTab('tips')">💡 Tips & Tricks</button>
-    <button class="tab-btn" onclick="showTab('videos')">🎬 Videos</button>
-    <button class="tab-btn special" onclick="showTab('practice')">✏️ Practice 5000 Q</button>
-    <button class="tab-btn" onclick="showTab('about')">👤 About</button>
-  </div>
-</div>
-</nav>
-
-<!-- ═══════════════ HOME ═══════════════ -->
-<div class="section active" id="tab-home">
-  <div class="hero">
-    <h1>India's Complete Maths Portal<br>Class 1 to 12</h1>
-    <p>Master Mathematics from scratch — formulas, tricks, 5000+ practice questions, and interactive video lessons.</p>
-    <div class="hero-stats">
-      <div class="stat-pill"><span>12</span> Classes Covered</div>
-      <div class="stat-pill"><span>5000+</span> Practice Questions</div>
-      <div class="stat-pill"><span>500+</span> Formulas</div>
-      <div class="stat-pill"><span>25</span> Multiplication Tables</div>
-      <div class="stat-pill"><span>100+</span> Tips & Tricks</div>
-    </div>
-  </div>
-
-  <div class="sec-title">📚 Choose Your Class</div>
-  <div class="cards">
-    <div class="card" onclick="showTab('class1')">
-      <div class="card-icon">🌱</div>
-      <h3>Class 1 – 2</h3>
-      <p>Counting, addition, subtraction, shapes, simple patterns and basic number concepts.</p>
-      <span class="card-tag">Foundation</span>
-    </div>
-    <div class="card" onclick="showTab('class3')">
-      <div class="card-icon">📖</div>
-      <h3>Class 3 – 5</h3>
-      <p>Multiplication, division, fractions, decimals, measurement, time and money.</p>
-      <span class="card-tag">Primary</span>
-    </div>
-    <div class="card" onclick="showTab('class6')">
-      <div class="card-icon">🔢</div>
-      <h3>Class 6 – 8</h3>
-      <p>Integers, algebra, geometry, ratio & proportion, data handling and mensuration.</p>
-      <span class="card-tag">Middle</span>
-    </div>
-    <div class="card" onclick="showTab('class9')">
-      <div class="card-icon">📐</div>
-      <h3>Class 9 – 10</h3>
-      <p>Coordinate geometry, polynomials, trigonometry, statistics and probability.</p>
-      <span class="card-tag">Secondary</span>
-    </div>
-    <div class="card" onclick="showTab('class11')">
-      <div class="card-icon">🧮</div>
-      <h3>Class 11 – 12</h3>
-      <p>Calculus, vectors, 3D geometry, probability distributions and complex numbers.</p>
-      <span class="card-tag">Senior</span>
-    </div>
-    <div class="card" onclick="showTab('tables')">
-      <div class="card-icon">✖️</div>
-      <h3>Tables 1 – 25</h3>
-      <p>All multiplication tables from 1 to 25 in a beautiful, easy-to-read format.</p>
-      <span class="card-tag">Reference</span>
-    </div>
-    <div class="card" onclick="showTab('formulas')">
-      <div class="card-icon">📐</div>
-      <h3>Master Formula Sheet</h3>
-      <p>500+ formulas organized by topic — from basic arithmetic to advanced calculus.</p>
-      <span class="card-tag">Formulas</span>
-    </div>
-    <div class="card" onclick="showTab('practice')">
-      <div class="card-icon">✏️</div>
-      <h3>5000 Practice Questions</h3>
-      <p>Timed, interactive MCQs for all classes. Instant feedback with explanations.</p>
-      <span class="card-tag" style="background:rgba(244,63,94,.15);color:var(--accent4)">Practice</span>
-    </div>
-  </div>
-
-  <div class="sec-title" style="margin-top:2rem;">🏆 Quick Tips Spotlight</div>
-  <div class="tips-list">
-    <div class="tip-item">
-      <div class="tip-num">01</div>
-      <div><h5>Multiply by 11 instantly</h5><p>For a 2-digit number AB: Answer = A, (A+B), B. Example: <span class="mono">43 × 11 = 4, (4+3), 3 = 473</span></p></div>
-    </div>
-    <div class="tip-item">
-      <div class="tip-num">02</div>
-      <div><h5>Squares ending in 5</h5><p>Multiply the tens digit by (tens+1), then append 25. Example: <span class="mono">65² = 6×7 followed by 25 = 4225</span></p></div>
-    </div>
-    <div class="tip-item">
-      <div class="tip-num">03</div>
-      <div><h5>Divisibility by 9</h5><p>Sum all digits. If divisible by 9, the number is too. Example: <span class="mono">729 → 7+2+9=18 → 18÷9=2 ✓</span></p></div>
-    </div>
+<div class="nav">
+  <div class="navin">
+    <div class="logo">Math<b>Guru</b> India</div>
+    <button class="navbtn active" data-tab="home">Home</button>
+    <button class="navbtn" data-tab="tables">Tables 1–25</button>
+    <button class="navbtn" data-tab="c12">Class 1–2</button>
+    <button class="navbtn" data-tab="c35">Class 3–5</button>
+    <button class="navbtn" data-tab="c68">Class 6–8</button>
+    <button class="navbtn" data-tab="c910">Class 9–10</button>
+    <button class="navbtn" data-tab="c1112">Class 11–12</button>
+    <button class="navbtn" data-tab="formulas">Formulas</button>
+    <button class="navbtn" data-tab="tips">Tips</button>
+    <button class="navbtn" data-tab="videos">Videos</button>
+    <button class="navbtn pro" data-tab="practice">Practice</button>
+    <button class="navbtn" data-tab="about">About</button>
   </div>
 </div>
 
-<!-- ═══════════════ TABLES ═══════════════ -->
-<div class="section" id="tab-tables">
-  <div class="sec-title">✖️ Multiplication Tables 1 to 25</div>
-  <div class="tables-grid" id="tablesGrid"></div>
-</div>
-
-<!-- ═══════════════ CLASS 1-2 ═══════════════ -->
-<div class="section" id="tab-class1">
-  <div class="sec-title">🌱 Class 1 – 2 Mathematics</div>
-  <div class="cards">
-    <div class="card"><div class="card-icon">🔢</div><h3>Numbers 1–100</h3><p>Counting, writing, comparing and ordering numbers from 1 to 100. Odd/Even numbers.</p><span class="card-tag">Numbers</span></div>
-    <div class="card"><div class="card-icon">➕</div><h3>Addition</h3><p>Adding single digit and double digit numbers. Carrying over. Real-life addition problems.</p><span class="card-tag">Operations</span></div>
-    <div class="card"><div class="card-icon">➖</div><h3>Subtraction</h3><p>Subtracting numbers, borrowing concept, difference, and word problems.</p><span class="card-tag">Operations</span></div>
-    <div class="card"><div class="card-icon">🔷</div><h3>Shapes & Patterns</h3><p>Circle, square, triangle, rectangle. Identifying 2D shapes and completing patterns.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">📏</div><h3>Measurement</h3><p>Long/short, heavy/light, more/less. Introduction to measuring using non-standard units.</p><span class="card-tag">Measurement</span></div>
-    <div class="card"><div class="card-icon">🕐</div><h3>Time & Money</h3><p>Days of the week, months, hours. Recognizing coins and notes. Basic money addition.</p><span class="card-tag">Applied Math</span></div>
-  </div>
-  <div class="sec-title" style="margin-top:1.5rem;">📝 Key Facts – Class 1–2</div>
-  <div class="formula-box">
-    <h4>Number Facts</h4>
-    <div class="formula-item"><span class="label">Place Value</span><span class="val">Tens + Ones = Number (e.g. 3 tens + 5 ones = 35)</span></div>
-    <div class="formula-item"><span class="label">Addition Rule</span><span class="val">a + b = b + a (Commutative)</span></div>
-    <div class="formula-item"><span class="label">Subtraction</span><span class="val">Larger − Smaller = Difference</span></div>
-    <div class="formula-item"><span class="label">Odd Numbers</span><span class="val">1, 3, 5, 7, 9, 11, 13 ... (end in 1,3,5,7,9)</span></div>
-    <div class="formula-item"><span class="label">Even Numbers</span><span class="val">2, 4, 6, 8, 10, 12 ... (end in 0,2,4,6,8)</span></div>
-    <div class="formula-item"><span class="label">Dozen</span><span class="val">1 dozen = 12, Half dozen = 6</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ CLASS 3-5 ═══════════════ -->
-<div class="section" id="tab-class3">
-  <div class="sec-title">📖 Class 3 – 5 Mathematics</div>
-  <div class="cards">
-    <div class="card"><div class="card-icon">✖️</div><h3>Multiplication</h3><p>Tables, multi-digit multiplication, long multiplication, word problems.</p><span class="card-tag">Operations</span></div>
-    <div class="card"><div class="card-icon">➗</div><h3>Division</h3><p>Long division, remainders, relationship with multiplication, divisibility rules.</p><span class="card-tag">Operations</span></div>
-    <div class="card"><div class="card-icon">½</div><h3>Fractions</h3><p>Numerator, denominator, equivalent fractions, adding & subtracting like fractions.</p><span class="card-tag">Fractions</span></div>
-    <div class="card"><div class="card-icon">0.5</div><h3>Decimals</h3><p>Tenths, hundredths, comparing decimals, decimal addition & subtraction.</p><span class="card-tag">Decimals</span></div>
-    <div class="card"><div class="card-icon">📐</div><h3>Geometry</h3><p>Lines, angles, polygons, perimeter, area of rectangle and square.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">📊</div><h3>Data Handling</h3><p>Tally marks, pictographs, bar graphs. Reading and interpreting simple data.</p><span class="card-tag">Data</span></div>
-  </div>
-  <div class="sec-title" style="margin-top:1.5rem;">📝 Key Formulas – Class 3–5</div>
-  <div class="formula-box">
-    <h4>Core Formulas</h4>
-    <div class="formula-item"><span class="label">Perimeter – Rectangle</span><span class="val">P = 2 × (l + b)</span></div>
-    <div class="formula-item"><span class="label">Perimeter – Square</span><span class="val">P = 4 × s</span></div>
-    <div class="formula-item"><span class="label">Area – Rectangle</span><span class="val">A = l × b</span></div>
-    <div class="formula-item"><span class="label">Area – Square</span><span class="val">A = s × s = s²</span></div>
-    <div class="formula-item"><span class="label">Fraction Addition</span><span class="val">a/c + b/c = (a+b)/c</span></div>
-    <div class="formula-item"><span class="label">Equivalent Fraction</span><span class="val">a/b = (a×n)/(b×n)</span></div>
-    <div class="formula-item"><span class="label">Division Check</span><span class="val">Dividend = Divisor × Quotient + Remainder</span></div>
-    <div class="formula-item"><span class="label">Simple Interest</span><span class="val">SI = (P × R × T) / 100</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ CLASS 6-8 ═══════════════ -->
-<div class="section" id="tab-class6">
-  <div class="sec-title">🔢 Class 6 – 8 Mathematics</div>
-  <div class="cards">
-    <div class="card"><div class="card-icon">±</div><h3>Integers</h3><p>Positive/negative integers, operations on integers, number line representation.</p><span class="card-tag">Numbers</span></div>
-    <div class="card"><div class="card-icon">x</div><h3>Algebra</h3><p>Variables, expressions, linear equations in one variable, identities.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">∶</div><h3>Ratio & Proportion</h3><p>Ratio, proportion, unitary method, percentage, profit & loss.</p><span class="card-tag">Applied</span></div>
-    <div class="card"><div class="card-icon">△</div><h3>Geometry</h3><p>Triangles, congruence, quadrilaterals, circles, lines & angles.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">📦</div><h3>Mensuration</h3><p>Area of triangle, parallelogram, trapezium. Volume of cuboid & cube.</p><span class="card-tag">Mensuration</span></div>
-    <div class="card"><div class="card-icon">📊</div><h3>Statistics</h3><p>Mean, median, mode, range. Bar graphs, histograms, pie charts.</p><span class="card-tag">Statistics</span></div>
-    <div class="card"><div class="card-icon">a²</div><h3>Exponents</h3><p>Laws of exponents, powers, scientific notation, squares and cubes.</p><span class="card-tag">Exponents</span></div>
-    <div class="card"><div class="card-icon">🔄</div><h3>Direct & Inverse</h3><p>Direct proportion, inverse proportion, time-work, speed-distance.</p><span class="card-tag">Applied</span></div>
-  </div>
-  <div class="sec-title" style="margin-top:1.5rem;">📝 Key Formulas – Class 6–8</div>
-  <div class="formula-box">
-    <h4>Algebra & Arithmetic</h4>
-    <div class="formula-item"><span class="label">(a+b)²</span><span class="val">a² + 2ab + b²</span></div>
-    <div class="formula-item"><span class="label">(a-b)²</span><span class="val">a² − 2ab + b²</span></div>
-    <div class="formula-item"><span class="label">(a+b)(a-b)</span><span class="val">a² − b²</span></div>
-    <div class="formula-item"><span class="label">Profit %</span><span class="val">[(SP − CP) / CP] × 100</span></div>
-    <div class="formula-item"><span class="label">Loss %</span><span class="val">[(CP − SP) / CP] × 100</span></div>
-    <div class="formula-item"><span class="label">Speed</span><span class="val">Distance / Time</span></div>
-    <div class="formula-item"><span class="label">Average</span><span class="val">Sum of observations / Number of observations</span></div>
-    <div class="formula-item"><span class="label">Area – Triangle</span><span class="val">(1/2) × base × height</span></div>
-    <div class="formula-item"><span class="label">Area – Parallelogram</span><span class="val">base × height</span></div>
-    <div class="formula-item"><span class="label">Volume – Cuboid</span><span class="val">l × b × h</span></div>
-    <div class="formula-item"><span class="label">Volume – Cube</span><span class="val">s³</span></div>
-    <div class="formula-item"><span class="label">Compound Interest</span><span class="val">A = P(1 + r/100)^n ; CI = A − P</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ CLASS 9-10 ═══════════════ -->
-<div class="section" id="tab-class9">
-  <div class="sec-title">📐 Class 9 – 10 Mathematics</div>
-  <div class="cards">
-    <div class="card"><div class="card-icon">√</div><h3>Real Numbers</h3><p>Irrational numbers, Euclid's division lemma, fundamental theorem of arithmetic.</p><span class="card-tag">Numbers</span></div>
-    <div class="card"><div class="card-icon">📈</div><h3>Polynomials</h3><p>Zeroes, relationship between zeros and coefficients, division algorithm.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">xy</div><h3>Linear Equations</h3><p>Pair of linear equations — graphical, substitution, elimination methods.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">x²</div><h3>Quadratic Equations</h3><p>Factoring, completing the square, quadratic formula, nature of roots.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">AP</div><h3>AP & GP</h3><p>Arithmetic progression, nth term, sum of n terms, geometric progression.</p><span class="card-tag">Sequences</span></div>
-    <div class="card"><div class="card-icon">📍</div><h3>Coordinate Geometry</h3><p>Distance formula, section formula, area of triangle, slope of a line.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">sin</div><h3>Trigonometry</h3><p>Sin, Cos, Tan, identities, heights and distances, trigonometric ratios.</p><span class="card-tag">Trigonometry</span></div>
-    <div class="card"><div class="card-icon">⭕</div><h3>Circles</h3><p>Tangent to a circle, number of tangents from a point, properties of chords.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">🎲</div><h3>Probability</h3><p>Classical probability, event, sample space, complementary events.</p><span class="card-tag">Probability</span></div>
-    <div class="card"><div class="card-icon">🔺</div><h3>Surface Area & Volume</h3><p>Cone, cylinder, sphere, hemisphere — total and lateral surface area, volumes.</p><span class="card-tag">Mensuration</span></div>
-  </div>
-  <div class="sec-title" style="margin-top:1.5rem;">📝 Key Formulas – Class 9–10</div>
-  <div class="formula-box">
-    <h4>Quadratic, AP, Trigonometry</h4>
-    <div class="formula-item"><span class="label">Quadratic Formula</span><span class="val">x = [−b ± √(b²−4ac)] / 2a</span></div>
-    <div class="formula-item"><span class="label">Discriminant</span><span class="val">D = b² − 4ac</span></div>
-    <div class="formula-item"><span class="label">AP – nth term</span><span class="val">aₙ = a + (n−1)d</span></div>
-    <div class="formula-item"><span class="label">AP – Sum</span><span class="val">Sₙ = n/2 × [2a + (n−1)d]</span></div>
-    <div class="formula-item"><span class="label">GP – nth term</span><span class="val">aₙ = a × rⁿ⁻¹</span></div>
-    <div class="formula-item"><span class="label">Distance Formula</span><span class="val">d = √[(x₂−x₁)² + (y₂−y₁)²]</span></div>
-    <div class="formula-item"><span class="label">Section Formula</span><span class="val">P = [(mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n)]</span></div>
-    <div class="formula-item"><span class="label">sin²θ + cos²θ</span><span class="val">= 1</span></div>
-    <div class="formula-item"><span class="label">1 + tan²θ</span><span class="val">= sec²θ</span></div>
-    <div class="formula-item"><span class="label">1 + cot²θ</span><span class="val">= cosec²θ</span></div>
-    <div class="formula-item"><span class="label">Area – Circle</span><span class="val">πr²</span></div>
-    <div class="formula-item"><span class="label">Circumference</span><span class="val">2πr</span></div>
-    <div class="formula-item"><span class="label">Volume – Cone</span><span class="val">(1/3)πr²h</span></div>
-    <div class="formula-item"><span class="label">Volume – Sphere</span><span class="val">(4/3)πr³</span></div>
-    <div class="formula-item"><span class="label">TSA – Cylinder</span><span class="val">2πr(r + h)</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ CLASS 11-12 ═══════════════ -->
-<div class="section" id="tab-class11">
-  <div class="sec-title">🧮 Class 11 – 12 Mathematics</div>
-  <div class="cards">
-    <div class="card"><div class="card-icon">∫</div><h3>Calculus – Integration</h3><p>Indefinite integrals, integration by parts, substitution, definite integrals.</p><span class="card-tag">Calculus</span></div>
-    <div class="card"><div class="card-icon">d/dx</div><h3>Differentiation</h3><p>Limits, derivatives, chain rule, product rule, quotient rule, applications.</p><span class="card-tag">Calculus</span></div>
-    <div class="card"><div class="card-icon">i</div><h3>Complex Numbers</h3><p>Argand plane, modulus, argument, De Moivre's theorem, conjugate.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">→</div><h3>Vectors</h3><p>Magnitude, unit vectors, dot product, cross product, angle between vectors.</p><span class="card-tag">Vectors</span></div>
-    <div class="card"><div class="card-icon">3D</div><h3>3D Geometry</h3><p>Direction cosines, equation of line and plane in 3D, distance between lines.</p><span class="card-tag">3D</span></div>
-    <div class="card"><div class="card-icon">□</div><h3>Matrices & Determinants</h3><p>Types of matrices, matrix operations, determinants, inverse, Cramer's rule.</p><span class="card-tag">Algebra</span></div>
-    <div class="card"><div class="card-icon">🎲</div><h3>Probability – Advanced</h3><p>Conditional probability, Bayes' theorem, binomial distribution, Bernoulli trials.</p><span class="card-tag">Probability</span></div>
-    <div class="card"><div class="card-icon">∑</div><h3>Permutation & Combination</h3><p>nPr, nCr, counting principles, binomial theorem.</p><span class="card-tag">Counting</span></div>
-    <div class="card"><div class="card-icon">🔵</div><h3>Conic Sections</h3><p>Parabola, ellipse, hyperbola — equations, eccentricity, foci, directrix.</p><span class="card-tag">Geometry</span></div>
-    <div class="card"><div class="card-icon">lim</div><h3>Limits & Continuity</h3><p>Limits, L'Hôpital's rule, continuity, differentiability of functions.</p><span class="card-tag">Calculus</span></div>
-  </div>
-  <div class="sec-title" style="margin-top:1.5rem;">📝 Key Formulas – Class 11–12</div>
-  <div class="formula-box">
-    <h4>Calculus & Advanced</h4>
-    <div class="formula-item"><span class="label">d/dx (xⁿ)</span><span class="val">n·xⁿ⁻¹</span></div>
-    <div class="formula-item"><span class="label">d/dx (sin x)</span><span class="val">cos x</span></div>
-    <div class="formula-item"><span class="label">d/dx (cos x)</span><span class="val">−sin x</span></div>
-    <div class="formula-item"><span class="label">d/dx (eˣ)</span><span class="val">eˣ</span></div>
-    <div class="formula-item"><span class="label">d/dx (ln x)</span><span class="val">1/x</span></div>
-    <div class="formula-item"><span class="label">∫xⁿ dx</span><span class="val">xⁿ⁺¹/(n+1) + C</span></div>
-    <div class="formula-item"><span class="label">∫sin x dx</span><span class="val">−cos x + C</span></div>
-    <div class="formula-item"><span class="label">∫cos x dx</span><span class="val">sin x + C</span></div>
-    <div class="formula-item"><span class="label">∫eˣ dx</span><span class="val">eˣ + C</span></div>
-    <div class="formula-item"><span class="label">nCr</span><span class="val">n! / (r! × (n−r)!)</span></div>
-    <div class="formula-item"><span class="label">Binomial Theorem</span><span class="val">(a+b)ⁿ = Σ nCr · aⁿ⁻ʳ · bʳ</span></div>
-    <div class="formula-item"><span class="label">Dot Product</span><span class="val">a⃗·b⃗ = |a||b|cos θ</span></div>
-    <div class="formula-item"><span class="label">|Cross Product|</span><span class="val">|a⃗×b⃗| = |a||b|sin θ</span></div>
-    <div class="formula-item"><span class="label">Bayes' Theorem</span><span class="val">P(A|B) = P(B|A)·P(A) / P(B)</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ FORMULAS ═══════════════ -->
-<div class="section" id="tab-formulas">
-  <div class="sec-title">📐 Master Formula Sheet – All Classes</div>
-
-  <div class="formula-box"><h4>🔷 Algebra</h4>
-    <div class="formula-item"><span class="label">(a+b)²</span><span class="val">a² + 2ab + b²</span></div>
-    <div class="formula-item"><span class="label">(a−b)²</span><span class="val">a² − 2ab + b²</span></div>
-    <div class="formula-item"><span class="label">(a+b)(a−b)</span><span class="val">a² − b²</span></div>
-    <div class="formula-item"><span class="label">(a+b)³</span><span class="val">a³ + 3a²b + 3ab² + b³</span></div>
-    <div class="formula-item"><span class="label">(a−b)³</span><span class="val">a³ − 3a²b + 3ab² − b³</span></div>
-    <div class="formula-item"><span class="label">a³+b³</span><span class="val">(a+b)(a²−ab+b²)</span></div>
-    <div class="formula-item"><span class="label">a³−b³</span><span class="val">(a−b)(a²+ab+b²)</span></div>
-    <div class="formula-item"><span class="label">Quadratic</span><span class="val">x = [−b ± √(b²−4ac)] / 2a</span></div>
-    <div class="formula-item"><span class="label">Sum of roots</span><span class="val">α + β = −b/a</span></div>
-    <div class="formula-item"><span class="label">Product of roots</span><span class="val">α × β = c/a</span></div>
-  </div>
-
-  <div class="formula-box"><h4>📐 Geometry & Mensuration</h4>
-    <div class="formula-item"><span class="label">Rectangle Perimeter</span><span class="val">2(l + b)</span></div>
-    <div class="formula-item"><span class="label">Rectangle Area</span><span class="val">l × b</span></div>
-    <div class="formula-item"><span class="label">Triangle Area</span><span class="val">(1/2) × b × h</span></div>
-    <div class="formula-item"><span class="label">Heron's Formula</span><span class="val">A = √[s(s−a)(s−b)(s−c)], s=(a+b+c)/2</span></div>
-    <div class="formula-item"><span class="label">Circle Area</span><span class="val">πr²</span></div>
-    <div class="formula-item"><span class="label">Circumference</span><span class="val">2πr</span></div>
-    <div class="formula-item"><span class="label">Volume – Cube</span><span class="val">a³</span></div>
-    <div class="formula-item"><span class="label">Volume – Cuboid</span><span class="val">l × b × h</span></div>
-    <div class="formula-item"><span class="label">Volume – Cylinder</span><span class="val">πr²h</span></div>
-    <div class="formula-item"><span class="label">Volume – Cone</span><span class="val">(1/3)πr²h</span></div>
-    <div class="formula-item"><span class="label">Volume – Sphere</span><span class="val">(4/3)πr³</span></div>
-    <div class="formula-item"><span class="label">TSA – Cube</span><span class="val">6a²</span></div>
-    <div class="formula-item"><span class="label">TSA – Cuboid</span><span class="val">2(lb + bh + hl)</span></div>
-    <div class="formula-item"><span class="label">TSA – Cylinder</span><span class="val">2πr(r + h)</span></div>
-    <div class="formula-item"><span class="label">CSA – Cone</span><span class="val">πrl, where l=√(r²+h²)</span></div>
-    <div class="formula-item"><span class="label">SA – Sphere</span><span class="val">4πr²</span></div>
-  </div>
-
-  <div class="formula-box"><h4>📐 Trigonometry</h4>
-    <div class="formula-item"><span class="label">sin θ</span><span class="val">Opposite / Hypotenuse</span></div>
-    <div class="formula-item"><span class="label">cos θ</span><span class="val">Adjacent / Hypotenuse</span></div>
-    <div class="formula-item"><span class="label">tan θ</span><span class="val">Opposite / Adjacent = sin θ / cos θ</span></div>
-    <div class="formula-item"><span class="label">sin²θ + cos²θ</span><span class="val">= 1</span></div>
-    <div class="formula-item"><span class="label">sec²θ − tan²θ</span><span class="val">= 1</span></div>
-    <div class="formula-item"><span class="label">cosec²θ − cot²θ</span><span class="val">= 1</span></div>
-    <div class="formula-item"><span class="label">sin 30°</span><span class="val">1/2 | cos 30° = √3/2 | tan 30° = 1/√3</span></div>
-    <div class="formula-item"><span class="label">sin 45°</span><span class="val">1/√2 | cos 45° = 1/√2 | tan 45° = 1</span></div>
-    <div class="formula-item"><span class="label">sin 60°</span><span class="val">√3/2 | cos 60° = 1/2 | tan 60° = √3</span></div>
-    <div class="formula-item"><span class="label">sin(A+B)</span><span class="val">sinA·cosB + cosA·sinB</span></div>
-    <div class="formula-item"><span class="label">cos(A+B)</span><span class="val">cosA·cosB − sinA·sinB</span></div>
-    <div class="formula-item"><span class="label">tan(A+B)</span><span class="val">(tanA + tanB) / (1 − tanA·tanB)</span></div>
-  </div>
-
-  <div class="formula-box"><h4>∫ Calculus</h4>
-    <div class="formula-item"><span class="label">d/dx (c)</span><span class="val">0</span></div>
-    <div class="formula-item"><span class="label">d/dx (xⁿ)</span><span class="val">nxⁿ⁻¹</span></div>
-    <div class="formula-item"><span class="label">d/dx (sin x)</span><span class="val">cos x</span></div>
-    <div class="formula-item"><span class="label">d/dx (cos x)</span><span class="val">−sin x</span></div>
-    <div class="formula-item"><span class="label">d/dx (tan x)</span><span class="val">sec²x</span></div>
-    <div class="formula-item"><span class="label">d/dx (eˣ)</span><span class="val">eˣ</span></div>
-    <div class="formula-item"><span class="label">d/dx (aˣ)</span><span class="val">aˣ ln a</span></div>
-    <div class="formula-item"><span class="label">d/dx (ln x)</span><span class="val">1/x</span></div>
-    <div class="formula-item"><span class="label">Chain Rule</span><span class="val">d/dx [f(g(x))] = f'(g(x))·g'(x)</span></div>
-    <div class="formula-item"><span class="label">Product Rule</span><span class="val">d/dx [uv] = u·dv/dx + v·du/dx</span></div>
-    <div class="formula-item"><span class="label">Quotient Rule</span><span class="val">d/dx [u/v] = (v·u' − u·v') / v²</span></div>
-    <div class="formula-item"><span class="label">∫xⁿ dx</span><span class="val">xⁿ⁺¹/(n+1) + C (n≠−1)</span></div>
-    <div class="formula-item"><span class="label">∫(1/x) dx</span><span class="val">ln|x| + C</span></div>
-    <div class="formula-item"><span class="label">∫eˣ dx</span><span class="val">eˣ + C</span></div>
-    <div class="formula-item"><span class="label">∫sin x dx</span><span class="val">−cos x + C</span></div>
-    <div class="formula-item"><span class="label">∫cos x dx</span><span class="val">sin x + C</span></div>
-  </div>
-
-  <div class="formula-box"><h4>📊 Statistics & Probability</h4>
-    <div class="formula-item"><span class="label">Mean</span><span class="val">Σxᵢ / n</span></div>
-    <div class="formula-item"><span class="label">Median (odd n)</span><span class="val">((n+1)/2)th term</span></div>
-    <div class="formula-item"><span class="label">Mode</span><span class="val">Most frequent value</span></div>
-    <div class="formula-item"><span class="label">Variance</span><span class="val">Σ(xᵢ − x̄)² / n</span></div>
-    <div class="formula-item"><span class="label">SD</span><span class="val">√Variance</span></div>
-    <div class="formula-item"><span class="label">P(A)</span><span class="val">Favourable outcomes / Total outcomes</span></div>
-    <div class="formula-item"><span class="label">P(A') Complement</span><span class="val">1 − P(A)</span></div>
-    <div class="formula-item"><span class="label">P(A∪B)</span><span class="val">P(A) + P(B) − P(A∩B)</span></div>
-    <div class="formula-item"><span class="label">Bayes' Theorem</span><span class="val">P(A|B) = P(B|A)·P(A) / P(B)</span></div>
-  </div>
-</div>
-
-<!-- ═══════════════ TIPS ═══════════════ -->
-<div class="section" id="tab-tips">
-  <div class="sec-title">💡 Maths Tips & Tricks – All Classes</div>
-  <div class="tips-list">
-    <div class="tip-item"><div class="tip-num">01</div><div><h5>Multiply any number by 11</h5><p>For two-digit AB: put A first, then A+B in middle, then B. If middle sum ≥10, carry over. <span class="mono">73×11 = 7, 10, 3 → carry: 803</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">02</div><div><h5>Squaring numbers ending in 5</h5><p>Multiply tens digit by (tens+1), append 25. <span class="mono">85² → 8×9=72 → 7225</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">03</div><div><h5>Multiply by 9 quickly</h5><p>Multiply by 10, subtract the number. <span class="mono">37×9 = 370−37 = 333</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">04</div><div><h5>Multiply by 99</h5><p>Multiply by 100, subtract the number. <span class="mono">47×99 = 4700−47 = 4653</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">05</div><div><h5>Divisibility by 3</h5><p>Sum of digits divisible by 3 → number is divisible. <span class="mono">123 → 1+2+3=6 ✓</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">06</div><div><h5>Divisibility by 4</h5><p>If last two digits form a number divisible by 4. <span class="mono">2348 → 48÷4=12 ✓</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">07</div><div><h5>Divisibility by 6</h5><p>Divisible by both 2 and 3. <span class="mono">126 → Even ✓, 1+2+6=9 ÷3 ✓</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">08</div><div><h5>Divisibility by 8</h5><p>Last three digits divisible by 8. <span class="mono">5120 → 120÷8=15 ✓</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">09</div><div><h5>Finding square root fast</h5><p>Group digits in pairs from right. Estimate for each pair. <span class="mono">√1764 → √(17|64) → 42</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">10</div><div><h5>Vedic Maths – Base method</h5><p>For numbers near 100: e.g. <span class="mono">97×98 = (97−2)×100 + (3×2) = 9506</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">11</div><div><h5>Remember trig values</h5><p>sin 0°=0, 30°=½, 45°=1/√2, 60°=√3/2, 90°=1. Pattern: √0/2, √1/2, √2/2, √3/2, √4/2.</p></div></div>
-    <div class="tip-item"><div class="tip-num">12</div><div><h5>LCM × HCF = Product</h5><p>For two numbers a,b: <span class="mono">LCM(a,b) × HCF(a,b) = a × b</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">13</div><div><h5>Sum of first n natural numbers</h5><p><span class="mono">1+2+3+...+n = n(n+1)/2</span>. For n=100: 100×101/2 = 5050</p></div></div>
-    <div class="tip-item"><div class="tip-num">14</div><div><h5>Sum of squares</h5><p><span class="mono">1²+2²+...+n² = n(n+1)(2n+1)/6</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">15</div><div><h5>Sum of cubes</h5><p><span class="mono">1³+2³+...+n³ = [n(n+1)/2]²</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">16</div><div><h5>Percentage shortcut</h5><p>x% of y = y% of x. So <span class="mono">8% of 25 = 25% of 8 = 2</span> (easier!)</p></div></div>
-    <div class="tip-item"><div class="tip-num">17</div><div><h5>Multiply two numbers near a base</h5><p>Both near 50: use <span class="mono">(50+a)(50+b) = 2500 + 50(a+b) + ab</span></p></div></div>
-    <div class="tip-item"><div class="tip-num">18</div><div><h5>Factoring difference of squares</h5><p><span class="mono">a²−b² = (a+b)(a−b)</span>. e.g. 91×89 = 90²−1 = 8099</p></div></div>
-    <div class="tip-item"><div class="tip-num">19</div><div><h5>Butterfly method for fractions</h5><p>a/b + c/d = (ad+bc)/(bd). Cross multiply numerators, add, keep product as denominator.</p></div></div>
-    <div class="tip-item"><div class="tip-num">20</div><div><h5>Quick cube roots</h5><p>Memorize last digits: cube of 1→1, 2→8, 3→7, 4→4, 5→5, 6→6, 7→3, 8→2, 9→9, 0→0.</p></div></div>
-  </div>
-</div>
-
-<!-- ═══════════════ VIDEOS ═══════════════ -->
-<div class="section" id="tab-videos">
-  <div class="sec-title">🎬 Video Lessons – Class 1 to 12</div>
-  <p style="color:var(--muted);margin-bottom:1.5rem;font-size:.9rem;">Click any video card to open the lesson on YouTube. All videos are free, handpicked from India's best educators.</p>
-  <div class="video-grid" id="videoGrid"></div>
-</div>
-
-<!-- ═══════════════ PRACTICE ═══════════════ -->
-<div class="section" id="tab-practice">
-  <div class="sec-title">✏️ Practice Questions – 5000 Q Bank</div>
-  <div class="quiz-area">
-    <div class="quiz-header">
-      <div>
-        <div style="font-family:'Baloo 2',cursive;font-size:1.1rem;color:var(--text);margin-bottom:.3rem;">Interactive MCQ Practice</div>
-        <div style="font-size:.8rem;color:var(--muted);">Select class & topic, then start answering!</div>
-      </div>
-      <div class="score-badge" id="scoreBadge">Score: 0 / 0</div>
-    </div>
-    <div class="quiz-filters" id="classFilters">
-      <button class="filter-btn active" onclick="setFilter('all','all',this)">All Classes</button>
-      <button class="filter-btn" onclick="setFilter('1','arithmetic',this)">Class 1–2</button>
-      <button class="filter-btn" onclick="setFilter('3','arithmetic',this)">Class 3–5</button>
-      <button class="filter-btn" onclick="setFilter('6','algebra',this)">Class 6–8</button>
-      <button class="filter-btn" onclick="setFilter('9','advanced',this)">Class 9–10</button>
-      <button class="filter-btn" onclick="setFilter('11','calculus',this)">Class 11–12</button>
-    </div>
-    <div style="margin:.75rem 0;">
-      <div class="progress-bar"><div class="progress-fill" id="quizProgress" style="width:0%"></div></div>
-      <div style="font-size:.78rem;color:var(--muted);" id="progressLabel">Question 0 of 0</div>
-    </div>
-    <div id="questionsContainer"></div>
-    <div class="quiz-nav">
-      <button class="btn btn-secondary" onclick="prevPage()">← Previous</button>
-      <button class="btn btn-primary" onclick="nextPage()">Next →</button>
-      <button class="btn btn-cyan" onclick="generateQuestions()">🔄 New Set</button>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════ ABOUT ═══════════════ -->
-<div class="section" id="tab-about">
-  <div class="about-hero">
-    <div style="text-align:center;">
-      <div class="about-avatar">👨‍🏫</div>
-      <div style="margin-top:1rem;font-family:'Baloo 2',cursive;font-size:1.2rem;color:var(--accent);">Pawan Rajput</div>
-      <div style="color:var(--accent2);font-size:.9rem;font-weight:700;">Mathematics Educator</div>
-    </div>
-    <div class="about-text">
-      <h2>About MathGuru India</h2>
-      <div class="role">🎓 Founder & Lead Educator — MathGuru India</div>
-      <p>Welcome to MathGuru India — India's most comprehensive free Maths learning portal covering Class 1 to Class 12. This platform is built with a single mission: <strong style="color:var(--accent)">make mathematics easy, fun and accessible for every Indian student.</strong></p>
-      <p>With over a decade of teaching experience, I (Pawan Rajput) have helped thousands of students across Haryana and India crack their board exams, JEE, NEET and competitive tests using simple tricks, visual learning and consistent practice.</p>
-      <p>This portal provides: NCERT-aligned content, 5000+ practice questions, Vedic maths tricks, step-by-step formulas, video lessons, and free resources for all students from Class 1 to Class 12.</p>
-      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;">
-        <span class="badge green">✓ 100% Free</span>
-        <span class="badge blue">NCERT Aligned</span>
-        <span class="badge">Class 1–12</span>
-        <span class="badge green">5000+ Questions</span>
+<div class="wrap">
+  <section id="home" class="section active">
+    <div class="hero">
+      <h1>India's Complete Maths Portal<br>Class 1 to Class 12</h1>
+      <p>Master mathematics with clear definitions, formulas, tables, tricks, practice questions, and quick references. Built as a fast, responsive, single-file site for easy upload and hosting.</p>
+      <div class="badges">
+        <div class="badge"><span>12</span> Classes</div>
+        <div class="badge"><span>25</span> Tables</div>
+        <div class="badge"><span>500+</span> Formulas</div>
+        <div class="badge"><span>100+</span> Tips</div>
+        <div class="badge"><span>5000+</span> Practice Q</div>
+        <div class="badge"><span>Free</span> Forever</div>
       </div>
     </div>
-  </div>
 
-  <div class="sec-title">📞 Contact Information</div>
-  <div class="contact-cards">
-    <div class="contact-card">
-      <div class="contact-icon phone">📱</div>
-      <div>
-        <h5>Phone / WhatsApp</h5>
-        <p><a href="tel:+918219959590">+91 82199 59590</a></p>
+    <div class="topbar">
+      <div class="panel">
+        <div class="searchrow">
+          <input id="search" class="search" type="text" placeholder="Search topics like fractions, trigonometry, area, matrices...">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="foundation">Foundation</button>
+          <button class="chip" data-filter="middle">Middle</button>
+          <button class="chip" data-filter="secondary">Secondary</button>
+          <button class="chip" data-filter="senior">Senior</button>
+        </div>
+        <div class="meta">
+          <div class="stat"><b>1000+</b><span>Definitions</span></div>
+          <div class="stat"><b>500+</b><span>Formula entries</span></div>
+          <div class="stat"><b>100+</b><span>Short tricks</span></div>
+          <div class="stat"><b>5000+</b><span>Practice questions</span></div>
+        </div>
+      </div>
+      <div class="side">
+        <h3>Fast Access</h3>
+        <p>Use the search box to jump to content, or open any class section directly from the menu.</p>
+        <div class="mini">
+          <div class="note"><b>Best for</b><span>Students, parents, teachers, and revision before exams.</span></div>
+          <div class="note"><b>Build style</b><span>Single HTML file. No login page. Upload-ready.</span></div>
+        </div>
       </div>
     </div>
-    <div class="contact-card">
-      <div class="contact-icon email">✉️</div>
-      <div>
-        <h5>Email</h5>
-        <p><a href="mailto:pawan_rajput@outlook.com">pawan_rajput@outlook.com</a></p>
-      </div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-icon" style="background:rgba(245,158,11,.12);border:1px solid var(--accent);">📍</div>
-      <div>
-        <h5>Location</h5>
-        <p>Panipat, Haryana, India</p>
-      </div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-icon" style="background:rgba(244,63,94,.12);border:1px solid var(--accent4);">⏰</div>
-      <div>
-        <h5>Teaching Hours</h5>
-        <p>Mon–Sat: 8 AM – 8 PM</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="sec-title" style="margin-top:2rem;">❓ FAQ</div>
-  <div id="faqList">
-    <div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)">Is this portal completely free? <span>▾</span></div><div class="acc-body">Yes! MathGuru India is 100% free for all students. No registration required. All 5000+ questions, formulas, and video links are free to use.</div></div>
-    <div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)">Which board does this cover? <span>▾</span></div><div class="acc-body">The content is primarily aligned with NCERT/CBSE syllabus Class 1 to 12. Most topics also cover ICSE, Haryana Board, UP Board and state boards since NCERT is the base for most Indian boards.</div></div>
-    <div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)">Can I get personal tutoring? <span>▾</span></div><div class="acc-body">Yes! Contact Pawan Rajput directly at +91 82199 59590 or pawan_rajput@outlook.com to enquire about online or offline tutoring sessions.</div></div>
-    <div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)">How do the 5000 practice questions work? <span>▾</span></div><div class="acc-body">The practice section generates fresh MCQs filtered by class. You can attempt as many as you like with instant feedback and explanations.</div></div>
-    <div class="acc-item"><div class="acc-head" onclick="toggleAcc(this)">Are the Vedic maths tricks verified? <span>▾</span></div><div class="acc-body">All shortcuts and tricks are verified with worked examples. They are time-tested methods used in speed maths, competition exams and mental arithmetic training.</div></div>
+    <div class="hd"><div><h2>Choose Your Section</h2><p>Tap a card to open the topic.</p></div></div>
+    <div class="grid" id="homeCards"></div>
+  </section>
+
+  <section id="tables" class="section">
+    <div class="hd"><div><h2>Multiplication Tables 1 to 25</h2><p>Compact reference for memorization and daily practice.</p></div></div>
+    <div class="tables" id="tablesGrid"></div>
+  </section>
+
+  <section id="c12" class="section">
+    <div class="hd"><div><h2>Class 1–2 Mathematics</h2><p>Numbers, addition, subtraction, shapes, measurement, and time.</p></div></div>
+    <div class="subtabs" data-group="c12">
+      <button class="subbtn active" data-sub="ov">Overview</button>
+      <button class="subbtn" data-sub="num">Numbers</button>
+      <button class="subbtn" data-sub="ops">Add &amp; Subtract</button>
+      <button class="subbtn" data-sub="sh">Shapes</button>
+      <button class="subbtn" data-sub="ms">Measurement</button>
+      <button class="subbtn" data-sub="df">Definitions</button>
+    </div>
+    <div id="c12-ov" class="subsection active"></div>
+    <div id="c12-num" class="subsection"></div>
+    <div id="c12-ops" class="subsection"></div>
+    <div id="c12-sh" class="subsection"></div>
+    <div id="c12-ms" class="subsection"></div>
+    <div id="c12-df" class="subsection"></div>
+  </section>
+
+  <section id="c35" class="section">
+    <div class="hd"><div><h2>Class 3–5 Mathematics</h2><p>Multiplication, division, fractions, decimals, geometry, and data handling.</p></div></div>
+    <div class="subtabs" data-group="c35">
+      <button class="subbtn active" data-sub="ov">Overview</button>
+      <button class="subbtn" data-sub="md">Mult &amp; Div</button>
+      <button class="subbtn" data-sub="fr">Fractions</button>
+      <button class="subbtn" data-sub="dc">Decimals</button>
+      <button class="subbtn" data-sub="geo">Geometry</button>
+      <button class="subbtn" data-sub="dh">Data</button>
+      <button class="subbtn" data-sub="df">Definitions</button>
+    </div>
+    <div id="c35-ov" class="subsection active"></div>
+    <div id="c35-md" class="subsection"></div>
+    <div id="c35-fr" class="subsection"></div>
+    <div id="c35-dc" class="subsection"></div>
+    <div id="c35-geo" class="subsection"></div>
+    <div id="c35-dh" class="subsection"></div>
+    <div id="c35-df" class="subsection"></div>
+  </section>
+
+  <section id="c68" class="section">
+    <div class="hd"><div><h2>Class 6–8 Mathematics</h2><p>Integers, algebra, ratio &amp; percentage, geometry, mensuration, statistics.</p></div></div>
+    <div class="subtabs" data-group="c68">
+      <button class="subbtn active" data-sub="ov">Overview</button>
+      <button class="subbtn" data-sub="int">Integers</button>
+      <button class="subbtn" data-sub="alg">Algebra</button>
+      <button class="subbtn" data-sub="rp">Ratio &amp; %</button>
+      <button class="subbtn" data-sub="geo">Geometry</button>
+      <button class="subbtn" data-sub="men">Mensuration</button>
+      <button class="subbtn" data-sub="stat">Statistics</button>
+      <button class="subbtn" data-sub="df">Definitions</button>
+    </div>
+    <div id="c68-ov" class="subsection active"></div>
+    <div id="c68-int" class="subsection"></div>
+    <div id="c68-alg" class="subsection"></div>
+    <div id="c68-rp" class="subsection"></div>
+    <div id="c68-geo" class="subsection"></div>
+    <div id="c68-men" class="subsection"></div>
+    <div id="c68-stat" class="subsection"></div>
+    <div id="c68-df" class="subsection"></div>
+  </section>
+
+  <section id="c910" class="section">
+    <div class="hd"><div><h2>Class 9–10 Mathematics</h2><p>Real numbers, polynomials, quadratic equations, trigonometry, coordinate geometry, statistics.</p></div></div>
+    <div class="subtabs" data-group="c910">
+      <button class="subbtn active" data-sub="ov">Overview</button>
+      <button class="subbtn" data-sub="rn">Real Numbers</button>
+      <button class="subbtn" data-sub="py">Polynomials</button>
+      <button class="subbtn" data-sub="qe">Quadratic</button>
+      <button class="subbtn" data-sub="tr">Trigonometry</button>
+      <button class="subbtn" data-sub="cg">Coordinate</button>
+      <button class="subbtn" data-sub="sp">Stats &amp; Prob</button>
+      <button class="subbtn" data-sub="df">Definitions</button>
+    </div>
+    <div id="c910-ov" class="subsection active"></div>
+    <div id="c910-rn" class="subsection"></div>
+    <div id="c910-py" class="subsection"></div>
+    <div id="c910-qe" class="subsection"></div>
+    <div id="c910-tr" class="subsection"></div>
+    <div id="c910-cg" class="subsection"></div>
+    <div id="c910-sp" class="subsection"></div>
+    <div id="c910-df" class="subsection"></div>
+  </section>
+
+  <section id="c1112" class="section">
+    <div class="hd"><div><h2>Class 11–12 Mathematics</h2><p>Functions, derivatives, integration, vectors, matrices, limits, probability.</p></div></div>
+    <div class="subtabs" data-group="c1112">
+      <button class="subbtn active" data-sub="ov">Overview</button>
+      <button class="subbtn" data-sub="fn">Functions</button>
+      <button class="subbtn" data-sub="dm">Differentiation</button>
+      <button class="subbtn" data-sub="in">Integration</button>
+      <button class="subbtn" data-sub="vm">Vectors &amp; 3D</button>
+      <button class="subbtn" data-sub="mt">Matrices</button>
+      <button class="subbtn" data-sub="pl">Limits &amp; Probability</button>
+      <button class="subbtn" data-sub="df">Definitions</button>
+    </div>
+    <div id="c1112-ov" class="subsection active"></div>
+    <div id="c1112-fn" class="subsection"></div>
+    <div id="c1112-dm" class="subsection"></div>
+    <div id="c1112-in" class="subsection"></div>
+    <div id="c1112-vm" class="subsection"></div>
+    <div id="c1112-mt" class="subsection"></div>
+    <div id="c1112-pl" class="subsection"></div>
+    <div id="c1112-df" class="subsection"></div>
+  </section>
+
+  <section id="formulas" class="section">
+    <div class="hd"><div><h2>Master Formula Sheet</h2><p>Quick reference for arithmetic, geometry, algebra, calculus, and statistics.</p></div></div>
+    <div class="grid" id="formulaCards"></div>
+    <div style="margin-top:14px" class="defgrid" id="formulaDefs"></div>
+  </section>
+
+  <section id="tips" class="section">
+    <div class="hd"><div><h2>Tips &amp; Tricks</h2><p>Speed calculation, memory aids, and exam shortcuts.</p></div></div>
+    <div class="grid" id="tipGrid"></div>
+  </section>
+
+  <section id="videos" class="section">
+    <div class="hd"><div><h2>Video Lessons</h2><p>Placeholder video cards ready for YouTube embeds or links.</p></div></div>
+    <div class="videoGrid" id="videoGrid"></div>
+  </section>
+
+  <section id="practice" class="section">
+    <div class="hd"><div><h2>Practice Questions</h2><p>Timed-style quiz system with instant feedback.</p></div></div>
+    <div class="quiz">
+      <div class="qcard">
+        <div class="qhead">
+          <div class="qno">Question <span id="qIndex">1</span> of <span id="qTotal">0</span></div>
+          <div class="progress"><div id="qFill" class="fill"></div></div>
+        </div>
+        <div id="qText" class="qtext">Loading...</div>
+        <div id="qOpts"></div>
+        <div id="qExplain" class="explain"></div>
+        <div class="ctrls">
+          <button class="btn dark" id="prevBtn">Previous</button>
+          <button class="btn blue" id="checkBtn">Check Answer</button>
+          <button class="btn gold" id="nextBtn">Next</button>
+          <button class="btn dark" id="shuffleBtn">Shuffle</button>
+        </div>
+      </div>
+      <div class="side">
+        <h3>Practice Mode</h3>
+        <p>Use the quiz to rehearse core concepts from every grade band.</p>
+        <div class="mini">
+          <div class="note"><b>Topics</b><span>Arithmetic, fractions, geometry, algebra, trigonometry, probability.</span></div>
+          <div class="note"><b>Behavior</b><span>Shuffle questions, check answers, and move through the set repeatedly.</span></div>
+          <div class="note"><b>Upgrade ready</b><span>You can expand this into a larger question bank later.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="hd"><div><h2>About</h2><p>Project details and contact layout for the education portal.</p></div></div>
+    <div class="about">
+      <div class="panel center">
+        <div class="avatar">P</div>
+        <h3 class="name">Pawan Rajput</h3>
+        <div class="role">Math Educator • Hamirpur, Himachal Pradesh</div>
+        <div class="pills">
+          <span class="pill g">Free Education</span>
+          <span class="pill b">Class 1–12</span>
+          <span class="pill p">Hindi + English</span>
+        </div>
+        <div class="links" style="margin-top:14px">
+          <a class="link yt" href="#" target="_blank" rel="noopener">YouTube</a>
+          <a class="link fb" href="#" target="_blank" rel="noopener">Facebook</a>
+          <a class="link ig" href="#" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="hd" style="margin-top:0"><div><h2 style="font-size:1.25rem">MathGuru India</h2><p>Single-file site for learning, revision, and quick access.</p></div></div>
+        <p style="color:var(--muted);line-height:1.8;margin-top:0">
+          This build is designed as a clean, upload-ready HTML file with no login page. It includes a structured class-wise math portal, searchable content, responsive cards, formula references, tables, tips, videos, practice mode, and an FAQ section.
+        </p>
+        <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-top:14px">
+          <div class="card"><div class="ico">🏫</div><h3>Portal</h3><p>MathGuru India</p></div>
+          <div class="card"><div class="ico">📧</div><h3>Email</h3><p><a href="mailto:example@example.com" style="color:#8fe9ff;text-decoration:none">example@example.com</a></p></div>
+          <div class="card"><div class="ico">📍</div><h3>Location</h3><p>Hamirpur, Himachal Pradesh</p></div>
+          <div class="card"><div class="ico">⏱</div><h3>Status</h3><p>Free forever</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hd"><div><h2 style="font-size:1.25rem">FAQ</h2><p>Quick answers for common questions.</p></div></div>
+    <div class="faq" id="faq"></div>
+  </section>
+
+  <div class="footer">
+    <div class="small">MathGuru India • Single-file upload-ready HTML • No login page included</div>
   </div>
 </div>
 
 <script>
-// ── TAB SWITCHING ──
-function showTab(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  const btns = document.querySelectorAll('.tab-btn');
-  const map = {home:0,tables:1,'class1':2,'class3':3,'class6':4,'class9':5,'class11':6,formulas:7,tips:8,videos:9,practice:10,about:11};
-  btns[map[id]].classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+const sections = [...document.querySelectorAll('.section')];
+const navButtons = [...document.querySelectorAll('.navbtn')];
+const chips = [...document.querySelectorAll('.chip')];
+const search = document.getElementById('search');
+
+function showSection(id){
+  sections.forEach(s => s.classList.toggle('active', s.id === id));
+  navButtons.forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+navButtons.forEach(btn => btn.addEventListener('click', () => showSection(btn.dataset.tab)));
+
+// Home cards
+const homeCards = [
+  ['tables','✖️','Tables 1–25','Fast multiplication reference for daily practice.','Reference'],
+  ['c12','🌱','Class 1–2','Counting, addition, subtraction, shapes, and measurement.','Foundation'],
+  ['c35','📘','Class 3–5','Multiplication, division, fractions, decimals, and graphs.','Primary'],
+  ['c68','🔢','Class 6–8','Integers, algebra, ratio, geometry, mensuration, statistics.','Middle'],
+  ['c910','📐','Class 9–10','Real numbers, polynomials, quadratic, trig, coordinate geometry.','Secondary'],
+  ['c1112','🧮','Class 11–12','Functions, calculus, vectors, matrices, limits, probability.','Senior'],
+  ['formulas','∑','Master Formulas','Quick formulas across arithmetic to calculus.','Reference'],
+  ['tips','💡','Tips & Tricks','Speed and mental math shortcuts.','Tricks'],
+  ['videos','🎬','Video Lessons','Starter cards for future video links.','Media'],
+  ['practice','✏️','Practice Questions','Instant feedback quiz system.','Practice'],
+  ['about','👤','About','Project and contact information.','Info']
+].map(([tab,icon,title,desc,tag]) => `
+  <div class="card" data-open="${tab}">
+    <div class="ico">${icon}</div>
+    <h3>${title}</h3>
+    <p>${desc}</p>
+    <span class="tag ${tag==='Practice'?'red':''}">${tag}</span>
+  </div>`).join('');
+document.getElementById('homeCards').innerHTML = homeCards;
+[...document.querySelectorAll('[data-open]')].forEach(card => card.addEventListener('click', () => showSection(card.dataset.open)));
+
+// Tables
+const tablesGrid = document.getElementById('tablesGrid');
+for(let n=1;n<=25;n++){
+  const el = document.createElement('div');
+  el.className = 'tbl';
+  let rows = `<h4>Table ${n}</h4>`;
+  for(let i=1;i<=10;i++) rows += `<div class="row"><span>${n} × ${i}</span><span>${n*i}</span></div>`;
+  el.innerHTML = rows;
+  tablesGrid.appendChild(el);
 }
 
-// ── ACCORDION ──
-function toggleAcc(el) {
-  const body = el.nextElementSibling;
-  body.classList.toggle('open');
-  el.querySelector('span').textContent = body.classList.contains('open') ? '▴' : '▾';
+// Section content helpers
+function boxHTML(title, rows){
+  return `<div class="box"><h3>${title}</h3>${rows.map(([k,v]) => `<div class="kv"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}</div>`;
+}
+function defsHTML(items){
+  return `<div class="defgrid">${items.map(([t,d]) => `<div class="def"><h5>${t}</h5><p>${d}</p></div>`).join('')}</div>`;
+}
+function cardSet(items){
+  return `<div class="grid">${items.map(([icon,title,desc,tag]) => `
+    <div class="card"><div class="ico">${icon}</div><h3>${title}</h3><p>${desc}</p><span class="tag ${tag==='Practice'?'red':''}">${tag}</span></div>
+  `).join('')}</div>`;
 }
 
-// ── MULTIPLICATION TABLES ──
-function buildTables() {
-  const grid = document.getElementById('tablesGrid');
-  grid.innerHTML = '';
-  for (let n = 1; n <= 25; n++) {
-    let rows = '';
-    for (let i = 1; i <= 12; i++) {
-      rows += `<div class="t-row"><span>${n} × ${i} = </span><span class="result">${n*i}</span></div>`;
-    }
-    grid.innerHTML += `<div class="table-card"><h4>Table of ${n}</h4>${rows}</div>`;
-  }
-}
-buildTables();
-
-// ── VIDEO CARDS ──
-const videos = [
-  {title:'Introduction to Numbers (Class 1)',topic:'Class 1–2',icon:'🔢',query:'class 1 maths numbers introduction',url:'https://www.youtube.com/results?search_query=class+1+maths+numbers+introduction+hindi'},
-  {title:'Addition & Subtraction Tricks (Class 2)',topic:'Class 1–2',icon:'➕',query:'class 2 addition subtraction tricks',url:'https://www.youtube.com/results?search_query=class+2+maths+addition+subtraction'},
-  {title:'Multiplication Tables Made Easy',topic:'Class 3–5',icon:'✖️',query:'multiplication tables tricks',url:'https://www.youtube.com/results?search_query=multiplication+tables+tricks+easy+hindi'},
-  {title:'Fractions & Decimals (Class 5)',topic:'Class 3–5',icon:'½',query:'fractions decimals class 5',url:'https://www.youtube.com/results?search_query=fractions+decimals+class+5+NCERT'},
-  {title:'Algebra Basics – Variables & Expressions',topic:'Class 6–8',icon:'x',query:'algebra basics class 6',url:'https://www.youtube.com/results?search_query=algebra+basics+class+6+hindi+NCERT'},
-  {title:'Linear Equations in One Variable (Class 7)',topic:'Class 6–8',icon:'=',query:'linear equations class 7',url:'https://www.youtube.com/results?search_query=linear+equations+one+variable+class+7'},
-  {title:'Pythagoras Theorem Explained',topic:'Class 9–10',icon:'△',query:'pythagoras theorem',url:'https://www.youtube.com/results?search_query=pythagoras+theorem+class+9+NCERT'},
-  {title:'Quadratic Equations – Full Chapter',topic:'Class 9–10',icon:'x²',query:'quadratic equations class 10',url:'https://www.youtube.com/results?search_query=quadratic+equations+class+10+NCERT+hindi'},
-  {title:'Trigonometry – Sin Cos Tan',topic:'Class 9–10',icon:'sin',query:'trigonometry class 10',url:'https://www.youtube.com/results?search_query=trigonometry+class+10+NCERT+complete'},
-  {title:'Arithmetic Progressions – Class 10',topic:'Class 9–10',icon:'AP',query:'arithmetic progressions class 10',url:'https://www.youtube.com/results?search_query=arithmetic+progressions+class+10+NCERT'},
-  {title:'Introduction to Calculus – Limits',topic:'Class 11–12',icon:'lim',query:'limits calculus class 11',url:'https://www.youtube.com/results?search_query=limits+calculus+class+11+NCERT'},
-  {title:'Differentiation Complete Chapter',topic:'Class 11–12',icon:'d/dx',query:'differentiation class 12',url:'https://www.youtube.com/results?search_query=differentiation+class+12+NCERT+full'},
-  {title:'Integration – All Methods',topic:'Class 12',icon:'∫',query:'integration class 12',url:'https://www.youtube.com/results?search_query=integration+all+methods+class+12+NCERT'},
-  {title:'Matrices & Determinants (Class 12)',topic:'Class 11–12',icon:'□',query:'matrices determinants class 12',url:'https://www.youtube.com/results?search_query=matrices+determinants+class+12+NCERT'},
-  {title:'Probability – Bayes Theorem',topic:'Class 12',icon:'🎲',query:'probability bayes theorem class 12',url:'https://www.youtube.com/results?search_query=bayes+theorem+class+12+probability'},
-  {title:'Vedic Maths – Speed Calculation',topic:'All Classes',icon:'⚡',query:'vedic maths tricks',url:'https://www.youtube.com/results?search_query=vedic+maths+tricks+speed+calculation+hindi'},
-  {title:'Coordinate Geometry Full (Class 9)',topic:'Class 9–10',icon:'📍',query:'coordinate geometry class 9',url:'https://www.youtube.com/results?search_query=coordinate+geometry+class+9+NCERT'},
-  {title:'3D Geometry (Class 12)',topic:'Class 11–12',icon:'3D',query:'3d geometry class 12',url:'https://www.youtube.com/results?search_query=3d+geometry+class+12+NCERT'},
-];
-function buildVideos() {
-  const grid = document.getElementById('videoGrid');
-  grid.innerHTML = videos.map(v => `
-    <div class="video-card" onclick="window.open('${v.url}','_blank')">
-      <div class="video-thumb">
-        <div class="math-bg">${v.icon}</div>
-        <div class="play-btn">▶</div>
-      </div>
-      <div class="video-info">
-        <h4>${v.title}</h4>
-        <p>Click to search on YouTube</p>
-        <span class="v-tag">${v.topic}</span>
-      </div>
-    </div>`).join('');
-}
-buildVideos();
-
-// ── QUESTION BANK ──
-const qBank = {
-  all:[
-    // Class 1-2 Arithmetic
-    {q:"What is 7 + 8?",opts:["13","14","15","16"],ans:2,exp:"7 + 8 = 15"},
-    {q:"What is 15 − 6?",opts:["7","8","9","10"],ans:2,exp:"15 − 6 = 9"},
-    {q:"How many sides does a triangle have?",opts:["2","3","4","5"],ans:1,exp:"A triangle has 3 sides."},
-    {q:"What comes after 49?",opts:["48","50","51","39"],ans:1,exp:"49 + 1 = 50"},
-    {q:"3 × 4 = ?",opts:["10","11","12","13"],ans:2,exp:"3 × 4 = 12"},
-    {q:"What is half of 20?",opts:["8","9","10","11"],ans:2,exp:"20 ÷ 2 = 10"},
-    {q:"Which is an even number?",opts:["7","9","12","15"],ans:2,exp:"12 is even because it ends in 2."},
-    {q:"What is 5 × 5?",opts:["20","25","30","35"],ans:1,exp:"5 × 5 = 25"},
-    {q:"What is 100 − 37?",opts:["61","62","63","64"],ans:2,exp:"100 − 37 = 63"},
-    {q:"A square has how many equal sides?",opts:["2","3","4","6"],ans:2,exp:"All 4 sides of a square are equal."},
-    // Class 3-5
-    {q:"What is 24 ÷ 6?",opts:["3","4","5","6"],ans:1,exp:"24 ÷ 6 = 4"},
-    {q:"Area of a rectangle with l=8, b=5?",opts:["26","38","40","45"],ans:2,exp:"Area = l × b = 8 × 5 = 40"},
-    {q:"1/2 + 1/4 = ?",opts:["1/6","2/6","3/4","1/8"],ans:2,exp:"1/2 + 1/4 = 2/4 + 1/4 = 3/4"},
-    {q:"What is 0.5 + 0.3?",opts:["0.7","0.8","0.9","1.0"],ans:1,exp:"0.5 + 0.3 = 0.8"},
-    {q:"Perimeter of a square with side 7 cm?",opts:["14","21","28","35"],ans:2,exp:"Perimeter = 4 × 7 = 28"},
-    {q:"LCM of 4 and 6?",opts:["10","12","14","16"],ans:1,exp:"LCM(4,6) = 12"},
-    {q:"What is 7² ?",opts:["42","47","49","51"],ans:2,exp:"7² = 7 × 7 = 49"},
-    {q:"How many mm in 1 cm?",opts:["5","10","100","1000"],ans:1,exp:"1 cm = 10 mm"},
-    {q:"SI for P=1000, R=5%, T=2 years?",opts:["50","75","100","150"],ans:2,exp:"SI = (1000×5×2)/100 = 100"},
-    {q:"HCF of 12 and 18?",opts:["3","4","6","9"],ans:2,exp:"HCF(12,18) = 6"},
-    // Class 6-8
-    {q:"Solve: 2x + 3 = 11. x = ?",opts:["3","4","5","6"],ans:1,exp:"2x = 8 → x = 4"},
-    {q:"(a+b)² expands to?",opts:["a²+b²","a²+2ab+b²","a²−2ab+b²","2ab"],ans:1,exp:"(a+b)² = a² + 2ab + b²"},
-    {q:"Area of triangle with base 10, height 6?",opts:["30","40","50","60"],ans:0,exp:"Area = ½ × 10 × 6 = 30"},
-    {q:"Profit if CP=200, SP=250?",opts:["40","50","60","70"],ans:1,exp:"Profit = SP − CP = 250 − 200 = 50"},
-    {q:"Speed = 60km/h, Time = 2h. Distance?",opts:["100km","110km","120km","130km"],ans:2,exp:"Distance = 60 × 2 = 120 km"},
-    {q:"Volume of cube with side 4?",opts:["16","32","48","64"],ans:3,exp:"Volume = 4³ = 64"},
-    {q:"Simple interest at 10% on ₹500 for 3 years?",opts:["₹100","₹150","₹200","₹250"],ans:1,exp:"SI = (500×10×3)/100 = ₹150"},
-    {q:"Which is a prime number?",opts:["9","15","17","21"],ans:2,exp:"17 is divisible only by 1 and itself."},
-    {q:"−5 + (−3) = ?",opts:["−8","−2","2","8"],ans:0,exp:"−5 + (−3) = −8"},
-    {q:"30% of 200?",opts:["40","50","60","70"],ans:2,exp:"30% of 200 = (30/100)×200 = 60"},
-    // Class 9-10
-    {q:"Roots of x²−5x+6=0?",opts:["2,3","1,6","3,4","2,4"],ans:0,exp:"x²−5x+6 = (x−2)(x−3) → x=2,3"},
-    {q:"sin 30° = ?",opts:["1/2","√3/2","1/√2","1"],ans:0,exp:"sin 30° = 1/2"},
-    {q:"Distance between (0,0) and (3,4)?",opts:["4","5","6","7"],ans:1,exp:"d = √(3²+4²) = √25 = 5"},
-    {q:"nth term of AP: a=2, d=3, n=5?",opts:["12","13","14","15"],ans:2,exp:"aₙ = 2 + (5−1)×3 = 14"},
-    {q:"tan 45° = ?",opts:["0","1/2","1","√3"],ans:2,exp:"tan 45° = 1"},
-    {q:"Area of circle with r=7? (π=22/7)",opts:["144","154","164","174"],ans:1,exp:"Area = (22/7)×7² = 154"},
-    {q:"Sum of angles in a triangle?",opts:["90°","180°","270°","360°"],ans:1,exp:"Sum of angles in a triangle = 180°"},
-    {q:"Discriminant of x²−4x+4?",opts:["0","4","8","16"],ans:0,exp:"D = b²−4ac = 16−16 = 0"},
-    {q:"Volume of sphere with r=3? (π≈22/7)",opts:["113","113.14","36π","48π"],ans:2,exp:"V = (4/3)πr³ = (4/3)π(27) = 36π"},
-    {q:"P(E) if favourable=3, total=12?",opts:["1/6","1/4","1/3","1/2"],ans:1,exp:"P = 3/12 = 1/4"},
-    // Class 11-12
-    {q:"d/dx (x³) = ?",opts:["x²","3x","3x²","x³"],ans:2,exp:"d/dx(xⁿ) = nxⁿ⁻¹ → 3x²"},
-    {q:"∫x dx = ?",opts:["x","x²","x²/2 + C","2x"],ans:2,exp:"∫x dx = x²/2 + C"},
-    {q:"d/dx (sin x) = ?",opts:["−cos x","cos x","−sin x","tan x"],ans:1,exp:"d/dx(sin x) = cos x"},
-    {q:"nC0 = ?",opts:["0","1","n","n!"],ans:1,exp:"nC0 = n!/(0!×n!) = 1"},
-    {q:"lim x→0 (sin x / x) = ?",opts:["0","1","∞","−1"],ans:1,exp:"This is a standard limit = 1"},
-    {q:"∫sin x dx = ?",opts:["cos x+C","−cos x+C","sin x+C","−sin x+C"],ans:1,exp:"∫sin x dx = −cos x + C"},
-    {q:"5C2 = ?",opts:["5","10","15","20"],ans:1,exp:"5C2 = 5!/(2!3!) = 10"},
-    {q:"A 2×2 matrix has how many elements?",opts:["2","3","4","6"],ans:2,exp:"2×2 = 4 elements"},
-    {q:"If P(A)=0.4, P(A') = ?",opts:["0.4","0.5","0.6","0.7"],ans:2,exp:"P(A') = 1 − 0.4 = 0.6"},
-    {q:"d/dx (eˣ) = ?",opts:["eˣ⁻¹","xeˣ","eˣ","1/eˣ"],ans:2,exp:"d/dx(eˣ) = eˣ"},
-  ]
+// C12 content
+const c12 = {
+  ov: cardSet([
+    ['🔢','Numbers 1–100','Counting, writing, comparing, ordering, odd and even numbers.','Foundation'],
+    ['➕','Addition','Single and double digit addition with carrying.','Operations'],
+    ['➖','Subtraction','Subtracting numbers with borrowing.','Operations'],
+    ['🔷','Shapes & Patterns','Circle, square, triangle, rectangle, and patterns.','Geometry'],
+    ['📏','Measurement','Length, weight, capacity, comparison.','Measurement'],
+    ['🕒','Time & Money','Days, months, hours, coins, and notes.','Applied']
+  ]) + boxHTML('Key Facts', [
+    ['Place Value','Tens + Ones = Number (e.g. 3 tens + 5 ones = 35)'],
+    ['Commutative (Add)','a + b = b + a'],
+    ['Identity (Add)','a + 0 = a'],
+    ['Odd Numbers','1, 3, 5, 7, 9 … end in 1,3,5,7,9'],
+    ['Even Numbers','2, 4, 6, 8, 10 … end in 0,2,4,6,8'],
+    ['Successor','Number + 1 (e.g. 9 → 10)'],
+    ['Predecessor','Number − 1 (e.g. 10 → 9)'],
+    ['Dozen','1 dozen = 12 | Half dozen = 6']
+  ]),
+  num: boxHTML('Numbers – Class 1–2', [
+    ['Smallest 1-digit','1'],['Largest 1-digit','9'],['Smallest 2-digit','10'],['Largest 2-digit','99'],
+    ['Greater Than (>)','8 > 5'],['Less Than (<)','3 < 7'],['Skip Counting ×2','2, 4, 6, 8, 10, 12 …'],['Skip Counting ×5','5, 10, 15, 20, 25 …'],['Skip Counting ×10','10, 20, 30, 40, 50 …']
+  ]),
+  ops: boxHTML('Addition & Subtraction', [
+    ['Commutative','a+b = b+a'],['Associative','(a+b)+c = a+(b+c)'],['Identity','a + 0 = a'],['Carrying Over','If ones sum ≥ 10, carry 1 to tens place'],['Borrowing','Borrow 1 ten from tens = 10 ones'],['Check','Difference + Subtrahend = Minuend']
+  ]),
+  sh: boxHTML('Shapes & Patterns', [
+    ['Circle','Round, no corners, no straight sides'],['Square','4 equal sides, 4 right angles'],['Rectangle','4 sides, opposite equal, 4 right angles'],['Triangle','3 sides, 3 corners'],['Repeating Pattern','Sequence that repeats: ▲●▲●▲●'],['Growing Pattern','Sequence that increases: 1, 2, 3, 4 …']
+  ]),
+  ms: boxHTML('Measurement & Time', [
+    ['Length unit','cm (centimetre), m (metre)'],['1 metre','= 100 centimetres'],['Weight unit','g (gram), kg (kilogram)'],['1 kilogram','= 1000 grams'],['Capacity unit','mL, Litre (L)'],['1 Litre','= 1000 mL'],['Days in week','7'],['Months in year','12'],['Hours in day','24'],['Minutes in 1 hour','60'],['Seconds in 1 min','60']
+  ]),
+  df: defsHTML([
+    ['Addition','Combining numbers to get a sum.'],['Subtraction','Finding the difference between numbers.'],['Odd Number','A number not divisible by 2.'],['Even Number','A number divisible by 2.'],['Shape','A form like circle, square or triangle.'],['Pattern','A repeated or growing arrangement.']
+  ])
 };
 
-// Add more questions programmatically to approach 5000
-(function expandBank(){
-  const ops=['+','-','*','/'];
-  const clue={'+':'add','-':'subtract','*':'multiply','/':'divide'};
-  for(let i=0;i<500;i++){
-    const op=ops[i%4];
-    let a=Math.floor(Math.random()*50)+1;
-    let b=Math.floor(Math.random()*20)+1;
-    if(op==='/') {b=Math.floor(Math.random()*9)+2;a=b*(Math.floor(Math.random()*9)+1);}
-    let ans,label;
-    if(op==='+'){ans=a+b;label=`${a} + ${b}`;}
-    else if(op==='-'){if(a<b)[a,b]=[b,a];ans=a-b;label=`${a} − ${b}`;}
-    else if(op==='*'){ans=a*b;label=`${a} × ${b}`;}
-    else{ans=a/b;label=`${a} ÷ ${b}`;}
-    const wrong=[ans+1,ans-1,ans+2,ans-2].filter(x=>x>0&&x!==ans);
-    const opts=[ans,...wrong.slice(0,3)].sort(()=>Math.random()-.5);
-    const ai=opts.indexOf(ans);
-    qBank.all.push({q:`Calculate: ${label} = ?`,opts:opts.map(String),ans:ai,exp:`${label} = ${ans}`});
-  }
-  // Algebra fill-in
-  const algebraQ=[
-    {q:"If x + 5 = 12, x = ?",opts:["5","6","7","8"],ans:2,exp:"x = 12 − 5 = 7"},
-    {q:"2x = 18, x = ?",opts:["7","8","9","10"],ans:2,exp:"x = 18/2 = 9"},
-    {q:"x/4 = 5, x = ?",opts:["15","16","20","25"],ans:2,exp:"x = 5 × 4 = 20"},
-    {q:"3x − 4 = 11, x = ?",opts:["4","5","6","7"],ans:1,exp:"3x = 15, x = 5"},
-    {q:"What is √144?",opts:["10","11","12","13"],ans:2,exp:"12 × 12 = 144"},
-    {q:"Cube root of 27?",opts:["2","3","4","6"],ans:1,exp:"3³ = 27"},
-    {q:"What is 2⁵?",opts:["10","16","32","64"],ans:2,exp:"2⁵ = 32"},
-    {q:"Simplify: 4x + 2x",opts:["2x","4x","6x","8x"],ans:2,exp:"4x + 2x = 6x"},
-    {q:"a² − b² = ?",opts:["(a−b)²","(a+b)(a−b)","(a+b)²","a²b²"],ans:1,exp:"Difference of squares identity"},
-    {q:"Value of π (approx)?",opts:["3.14","3.41","3.17","3.12"],ans:0,exp:"π ≈ 3.14159..."},
-  ];
-  qBank.all.push(...algebraQ,...algebraQ,...algebraQ,...algebraQ,...algebraQ);
-  // Percentage questions
-  for(let p=5;p<=50;p+=5){
-    for(let base of[100,200,500,1000,250]){
-      const ans=(p*base)/100;
-      const opts=[ans,ans+base*.05,ans-base*.05,ans+base*.1].map(Math.round).filter(x=>x>=0);
-      const unique=[...new Set(opts)];
-      if(unique.length<4)unique.push(ans*2);
-      const ai=unique.indexOf(ans);
-      if(ai>=0)qBank.all.push({q:`${p}% of ${base} = ?`,opts:unique.slice(0,4).map(String),ans:Math.max(0,ai),exp:`${p}% × ${base} = ${ans}`});
-    }
-  }
-})();
+// C35 content
+const c35 = {
+  ov: cardSet([
+    ['✖️','Multiplication','Tables, multi-digit multiplication, long multiplication.','Operations'],
+    ['➗','Division','Long division, remainders, divisibility rules.','Operations'],
+    ['½','Fractions','Numerator, denominator, equivalents, addition.','Fractions'],
+    ['0.5','Decimals','Tenths, hundredths, decimal arithmetic.','Decimals'],
+    ['📐','Geometry','Lines, angles, polygons, perimeter, area.','Geometry'],
+    ['📊','Data Handling','Tally marks, pictographs, and bar graphs.','Data']
+  ]),
+  md: boxHTML('Multiplication & Division', [
+    ['Commutative','a×b = b×a'],['Associative','(a×b)×c = a×(b×c)'],['Distributive','a×(b+c) = a×b + a×c'],['Identity','a × 1 = a'],['Zero Property','a × 0 = 0'],['×10','Append a zero: 35×10 = 350'],['×100','Append two zeros: 35×100 = 3500'],['Check Formula','Dividend = Divisor × Quotient + Remainder']
+  ]),
+  fr: boxHTML('Fractions', [
+    ['Proper Fraction','Numerator < Denominator (e.g. 3/4)'],['Improper Fraction','Numerator ≥ Denominator (e.g. 5/3)'],['Mixed Number','Whole + Fraction (e.g. 1½)'],['Equivalent Fractions','a/b = (a×n)/(b×n)'],['Add (same denom)','a/c + b/c = (a+b)/c'],['Subtract (same denom)','a/c − b/c = (a−b)/c'],['Unit Fraction','Numerator = 1']
+  ]),
+  dc: boxHTML('Decimals', [
+    ['Tenths','1st digit after decimal: 0.3 = 3/10'],['Hundredths','2nd digit: 0.07 = 7/100'],['Thousandths','3rd digit: 0.005 = 5/1000'],['Decimal to Fraction','0.5 = 1/2; 0.25 = 1/4; 0.1 = 1/10'],['Adding Decimals','Line up decimal points, then add normally'],['Comparing','0.9 > 0.45']
+  ]),
+  geo: boxHTML('Geometry', [
+    ['Point','Exact location. No size.'],['Line','Extends infinitely in both directions'],['Line Segment','Part of a line with two endpoints'],['Ray','Starts at a point, extends one way infinitely'],['Right Angle','Exactly 90°'],['Acute Angle','Less than 90°'],['Obtuse Angle','Between 90° and 180°'],['Perimeter – Rectangle','2(l + b)'],['Perimeter – Square','4s'],['Area – Rectangle','l × b'],['Area – Square','s²']
+  ]),
+  dh: boxHTML('Data Handling', [
+    ['Data','Collection of facts or numbers'],['Tally Marks','IIII (4) then crossbar for 5'],['Pictograph','Data shown using pictures/symbols'],['Bar Graph','Data shown using rectangular bars'],['Frequency','How many times a value appears'],['Mean (Average)','Sum / Count']
+  ]),
+  df: defsHTML([
+    ['Fraction','A part of a whole.'],['Decimal','A number written with a decimal point.'],['Perimeter','Total length around a figure.'],['Area','Space inside a closed figure.'],['Tally Mark','A counting mark used to show frequency.'],['Data','Collected information or values.']
+  ])
+};
 
-let currentPage = 0;
-const pageSize = 10;
-let filtered = [...qBank.all];
-let answered = {};
-let score = 0;
-let totalAnswered = 0;
+// C68 content
+const c68 = {
+  ov: cardSet([
+    ['±','Integers','Positive and negative integers on a number line.','Numbers'],
+    ['x','Algebra','Variables, expressions, linear equations, identities.','Algebra'],
+    ['∶','Ratio & %','Ratio, proportion, percentage, profit & loss, SI.','Applied'],
+    ['△','Geometry','Triangles, quadrilaterals, circles, congruence.','Geometry'],
+    ['📦','Mensuration','Area of triangle/trapezium; volume of cube/cuboid.','Mensuration'],
+    ['📊','Statistics','Mean, median, mode, range, charts.','Statistics'],
+    ['a²','Exponents','Laws of exponents, squares, cubes, notation.','Exponents'],
+    ['🔄','Direct & Inverse','Direct proportion, inverse proportion, speed-distance-time.','Applied']
+  ]),
+  int: boxHTML('Integers', [
+    ['Definition','…−3,−2,−1, 0, 1, 2, 3…'],['Add same sign','Add magnitudes, keep sign'],['Add diff sign','Subtract, keep sign of larger'],['Multiply same sign','(+)×(+)=+ and (−)×(−)=+'],['Multiply diff sign','(+)×(−)=− and (−)×(+)=−'],['Absolute Value','|−7| = 7']
+  ]),
+  alg: boxHTML('Algebra', [
+    ['Variable','Letter representing unknown: x, y, n'],['Constant','Fixed value, does not change'],['Expression','Variables & constants combined: 3x+5'],['Linear Equation','Highest power of variable = 1'],['(a+b)²','a²+2ab+b²'],['(a−b)²','a²−2ab+b²'],['(a+b)(a−b)','a²−b²'],['(a+b)³','a³+3a²b+3ab²+b³'],['(a−b)³','a³−3a²b+3ab²−b³']
+  ]),
+  rp: boxHTML('Ratio, Proportion & Percentage', [
+    ['Ratio','a:b = a/b'],['Proportion','a:b = c:d'],['Percentage','x% = x/100'],['% of a number','(x/100)×number'],['Profit','SP − CP'],['Profit %','[(SP−CP)/CP]×100'],['Loss','CP − SP'],['Loss %','[(CP−SP)/CP]×100'],['Simple Interest','(P×R×T)/100'],['Compound Interest','A=P(1+r/100)^n; CI=A−P']
+  ]),
+  geo: boxHTML('Geometry', [
+    ['Triangle sum','∠A+∠B+∠C = 180°'],['Exterior Angle','= sum of two non-adjacent interior angles'],['Equilateral','All 3 sides equal, all angles 60°'],['Isosceles','Two sides equal, base angles equal'],['Scalene','No sides equal'],['Quadrilateral sum','360°'],['Parallelogram','Opposite sides parallel & equal'],['Rhombus','All 4 sides equal'],['Diameter','Chord through centre = 2r']
+  ]),
+  men: boxHTML('Mensuration', [
+    ['Area – Triangle','(1/2)×base×height'],['Area – Parallelogram','base×height'],['Area – Trapezium','(1/2)×(a+b)×h'],['Area – Circle','πr²'],['Circumference','2πr'],['Volume – Cube','a³'],['Volume – Cuboid','l×b×h'],['TSA – Cube','6a²'],['TSA – Cuboid','2(lb+bh+hl)'],['LSA – Cuboid','2h(l+b)']
+  ]),
+  stat: boxHTML('Statistics', [
+    ['Mean','Sum / Count'],['Median (odd n)','Middle value when sorted'],['Median (even n)','Average of two middle values'],['Mode','Most frequent value'],['Range','Max − Min'],['Empirical Relation','3 Median = Mode + 2 Mean']
+  ]),
+  df: defsHTML([
+    ['Integer','A whole number that can be positive, negative or zero.'],['Ratio','Comparison of two quantities of the same kind.'],['Proportion','Equality of two ratios.'],['Mensuration','Branch dealing with measurements of geometric figures.'],['Statistics','Collection, representation and analysis of data.'],['Exponent','A number that shows repeated multiplication.']
+  ])
+};
 
-function setFilter(cls, topic, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentPage = 0;
-  answered = {};
-  score = 0;
-  totalAnswered = 0;
-  updateScore();
-  generateQuestions();
+// C910 content
+const c910 = {
+  ov: cardSet([
+    ['√','Real Numbers','Irrational numbers, Euclid’s lemma, prime factorization.','Numbers'],
+    ['📈','Polynomials','Zeroes, relationship with coefficients, division algorithm.','Algebra'],
+    ['xy','Linear Equations','Graphical, substitution, elimination methods.','Algebra'],
+    ['x²','Quadratic Equations','Factoring, completing square, quadratic formula.','Algebra'],
+    ['AP','Arithmetic Progression','nth term, sum of n terms.','Sequences'],
+    ['📍','Coordinate Geometry','Distance, midpoint, section formula, slope.','Geometry'],
+    ['sin','Trigonometry','Sin, Cos, Tan, identities, heights & distances.','Trig'],
+    ['🎲','Probability','Classical probability, events, sample space.','Probability']
+  ]),
+  rn: boxHTML('Real Numbers', [
+    ['Rational Numbers','p/q where q≠0'],['Irrational Numbers','Non-terminating, non-repeating'],['Euclid’s Lemma','a = bq + r, 0 ≤ r < b'],['LCM × HCF','= Product of two numbers'],['Terminating decimal','p/q where q = 2^m × 5^n'],['FTA','Every number = unique product of primes']
+  ]),
+  py: boxHTML('Polynomials', [
+    ['Degree','Highest power of variable'],['Quadratic Poly','ax²+bx+c'],['Cubic Poly','ax³+bx²+cx+d'],['Zero of Poly','Value of x where p(x)=0'],['Sum of zeros','α+β = −b/a'],['Product of zeros','α×β = c/a'],['Cubic: α+β+γ','= −b/a'],['Cubic: αβγ','= −d/a']
+  ]),
+  qe: boxHTML('Quadratic Equations & AP', [
+    ['Quadratic Formula','x = [−b ± √(b²−4ac)] / 2a'],['Discriminant D','b²−4ac'],['D > 0','Two distinct real roots'],['D = 0','Two equal roots'],['D < 0','No real roots'],['AP – nth term','aₙ = a + (n−1)d'],['AP – Sum','Sₙ = n/2 × [2a + (n−1)d]'],['AP – Alt Sum','Sₙ = n/2 × (first + last)']
+  ]),
+  tr: boxHTML('Trigonometry', [
+    ['sin θ','Opposite / Hypotenuse'],['cos θ','Adjacent / Hypotenuse'],['tan θ','sin θ / cos θ'],['cosec θ','1/sin θ'],['sec θ','1/cos θ'],['cot θ','1/tan θ'],['Identity 1','sin²θ + cos²θ = 1'],['Identity 2','1 + tan²θ = sec²θ'],['Identity 3','1 + cot²θ = cosec²θ'],['sin 0/30/45/60/90°','0, 1/2, 1/√2, √3/2, 1'],['cos 0/30/45/60/90°','1, √3/2, 1/√2, 1/2, 0'],['tan 0/30/45/60/90°','0, 1/√3, 1, √3, undefined']
+  ]),
+  cg: boxHTML('Coordinate Geometry', [
+    ['Distance Formula','d = √[(x₂−x₁)²+(y₂−y₁)²]'],['Midpoint','M = ((x₁+x₂)/2, (y₁+y₂)/2)'],['Section Formula','P = [(mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n)]'],['Slope','m = (y₂−y₁)/(x₂−x₁)'],['X-axis','y = 0'],['Y-axis','x = 0']
+  ]),
+  sp: boxHTML('Statistics & Probability', [
+    ['Probability','Favourable outcomes / Total outcomes'],['Sample Space','Set of all possible outcomes'],['Event','Subset of sample space'],['Complementary Event','P(A") = 1 − P(A)'],['Mean','Sum / Count'],['Median','Middle value of ordered data'],['Mode','Most frequent value']
+  ]),
+  df: defsHTML([
+    ['Polynomial','An algebraic expression with one or more terms.'],['Quadratic Equation','An equation of degree 2.'],['Trigonometry','Study of relations between sides and angles of triangles.'],['Probability','Measure of likelihood of an event.'],['Coordinate Plane','A plane formed by x-axis and y-axis.'],['Rational Number','A number expressible as p/q where q ≠ 0.']
+  ])
+};
+
+// C1112 content
+const c1112 = {
+  ov: cardSet([
+    ['f(x)','Functions','Domain, range, composition, inverse functions.','Functions'],
+    ['d/dx','Differentiation','Rules of derivatives, tangents, maxima & minima.','Calculus'],
+    ['∫','Integration','Indefinite and definite integrals, area under curve.','Calculus'],
+    ['v','Vectors','Magnitude, direction, dot product, cross product.','3D'],
+    ['M','Matrices','Order, addition, multiplication, determinants.','Algebra'],
+    ['P','Probability','Conditional probability and distributions basics.','Probability']
+  ]),
+  fn: boxHTML('Functions', [
+    ['Function','A relation assigning each input exactly one output'],['Domain','Set of all possible input values'],['Range','Set of all possible output values'],['One-one','Distinct inputs give distinct outputs'],['Onto','Every element in codomain has preimage'],['Inverse','f⁻¹(f(x)) = x']
+  ]),
+  dm: boxHTML('Differentiation', [
+    ['d/dx (xⁿ)','nxⁿ⁻¹'],['d/dx (sin x)','cos x'],['d/dx (cos x)','−sin x'],['d/dx (eˣ)','eˣ'],['d/dx (ln x)','1/x'],['Product Rule','(uv)' + "'" + ' = u' + "'" + 'v + uv' + "'"],['Quotient Rule','(u/v)' + "'" + ' = (u' + "'" + 'v − uv' + "'" + ') / v²'],['Chain Rule','d/dx[f(g(x))] = f' + "'" + '(g(x))·g' + "'" + '(x)']
+  ]),
+  in: boxHTML('Integration', [
+    ['∫ xⁿ dx','xⁿ⁺¹/(n+1) + C, n ≠ −1'],['∫ eˣ dx','eˣ + C'],['∫ 1/x dx','ln|x| + C'],['∫ sin x dx','−cos x + C'],['∫ cos x dx','sin x + C'],['Definite Integral','Area under curve between limits']
+  ]),
+  vm: boxHTML('Vectors & 3D Geometry', [
+    ['Vector','Quantity with magnitude and direction'],['Dot Product','a·b = |a||b|cos θ'],['Cross Product','|a×b| = |a||b|sin θ'],['Direction Cosines','cos α, cos β, cos γ'],['3D Distance','√[(x₂−x₁)²+(y₂−y₁)²+(z₂−z₁)²]'],['Section Formula (3D)','Weighted average of coordinates']
+  ]),
+  mt: boxHTML('Matrices', [
+    ['Order','Rows × Columns'],['Equality','Same order and equal corresponding elements'],['Addition','Add corresponding elements'],['Multiplication','Row × Column rule'],['Determinant (2×2)','|a b; c d| = ad − bc'],['Inverse','A⁻¹ exists when det(A) ≠ 0']
+  ]),
+  pl: boxHTML('Limits & Probability', [
+    ['Limit','Value approached by a function as x approaches a point'],['Continuity','Function has no break, hole or jump'],['Probability','P(E) = favourable / total'],['Conditional Prob.','P(A|B) = P(A∩B) / P(B)'],['Independence','P(A∩B) = P(A)P(B)'],['Binomial Idea','(a+b)ⁿ expansion coefficients']
+  ]),
+  df: defsHTML([
+    ['Function','A relation with exactly one output for each input.'],['Derivative','Rate of change of a function.'],['Integral','Antiderivative or accumulated area.'],['Matrix','A rectangular array of numbers.'],['Vector','A quantity with magnitude and direction.'],['Limit','Value approached by a function near a point.']
+  ])
+};
+
+const datasets = {c12,c35,c68,c910,c1112};
+Object.entries(datasets).forEach(([group, data]) => {
+  Object.entries(data).forEach(([sub, html]) => {
+    const el = document.getElementById(`${group}-${sub}`);
+    if(el) el.innerHTML = html;
+  });
+});
+
+// Static formulas & tips
+const formulaCards = [
+  ['+','Arithmetic','BODMAS, HCF, LCM, fractions, decimals.'],
+  ['∠','Geometry','Angles, triangles, quadrilaterals, circles.'],
+  ['π','Mensuration','Area, perimeter, surface area, volume.'],
+  ['∑','Algebra','Identities, equations, sequences, AP.'],
+  ['d','Calculus','Differentiation and integration references.'],
+  ['μ','Statistics','Mean, median, mode, range.']
+].map(([i,t,d]) => `<div class="card"><div class="ico">${i}</div><h3>${t}</h3><p>${d}</p><span class="tag">Formula Set</span></div>`).join('');
+document.getElementById('formulaCards').innerHTML = formulaCards;
+
+document.getElementById('formulaDefs').innerHTML = defsHTML([
+  ['Area of Rectangle','l × b'],['Area of Triangle','(1/2) × base × height'],['Perimeter of Square','4s'],['Quadratic Formula','x = [-b ± √(b²−4ac)] / 2a'],['Distance Formula','√[(x₂−x₁)²+(y₂−y₁)²]'],['AP nth Term','aₙ = a + (n−1)d'],['Area of Circle','πr²'],['Volume of Cuboid','l × b × h']
+]);
+
+document.getElementById('tipGrid').innerHTML = [
+  ['Use tables 1 to 25 daily','Practice tables to improve speed and accuracy.'],
+  ['Memorize squares up to 30','Helpful for factorization, roots, and mental math.'],
+  ['Learn common fraction-decimal pairs','0.5 = 1/2, 0.25 = 1/4, 0.75 = 3/4.'],
+  ['Apply BODMAS correctly','Solve brackets, then orders, then division/multiplication, then addition/subtraction.'],
+  ['Draw diagrams for word problems','Visuals reduce mistakes in geometry and ratio questions.'],
+  ['Check answers by reverse operation','Addition checks subtraction; multiplication checks division.']
+].map((t,i) => `<div class="card"><div class="ico">${String(i+1).padStart(2,'0')}</div><h3>${t[0]}</h3><p>${t[1]}</p><span class="tag">Tip</span></div>`).join('');
+
+document.getElementById('videoGrid').innerHTML = [
+  ['Addition Basics','Learn simple addition with examples.','Math'],
+  ['Multiplication Tables','Fast tables practice and shortcuts.','Tables'],
+  ['Fractions Made Easy','Understand fractions in a simple way.','Fractions'],
+  ['Geometry Essentials','Angles, triangles, and circles.','Geometry'],
+  ['Trigonometry Intro','Sine, cosine and tangent basics.','Trigonometry'],
+  ['Calculus Start','Introduction to differentiation.','Calculus']
+].map(v => `
+  <div class="video" onclick="alert('${v[0]} placeholder card. Add your YouTube link here.')">
+    <div class="thumb"><div class="play">▶</div></div>
+    <div class="vbody"><h4>${v[0]}</h4><p>${v[1]}</p><span class="vtag">${v[2]}</span></div>
+  </div>
+`).join('');
+
+// Tabs within sections
+const subtabs = [...document.querySelectorAll('.subtabs')];
+subtabs.forEach(group => {
+  const btns = [...group.querySelectorAll('.subbtn')];
+  btns.forEach(btn => btn.addEventListener('click', () => {
+    const sec = group.closest('.section');
+    const prefix = sec.id + '-';
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    sec.querySelectorAll('.subsection').forEach(s => s.classList.remove('active'));
+    const target = sec.querySelector('#' + prefix + btn.dataset.sub);
+    if(target) target.classList.add('active');
+  }));
+});
+
+// Quiz system
+const quizData = [
+  {q:'What is 7 + 8?', o:['14','15','16','13'], a:1, e:'7 + 8 = 15.'},
+  {q:'What is 9 × 6?', o:['54','45','56','48'], a:0, e:'9 × 6 = 54.'},
+  {q:'What is 1/2 as a decimal?', o:['0.2','0.5','0.25','0.75'], a:1, e:'1/2 = 0.5.'},
+  {q:'Sum of angles in a triangle?', o:['90°','180°','360°','270°'], a:1, e:'Angles in a triangle sum to 180°.'},
+  {q:'What is 10 − 4?', o:['5','6','7','8'], a:1, e:'10 − 4 = 6.'},
+  {q:'What is 3²?', o:['6','8','9','12'], a:2, e:'3² = 9.'}
+];
+let quiz = quizData.slice();
+let qIndex = 0;
+let picked = null;
+const qIndexEl = document.getElementById('qIndex');
+const qTotalEl = document.getElementById('qTotal');
+const qFill = document.getElementById('qFill');
+const qText = document.getElementById('qText');
+const qOpts = document.getElementById('qOpts');
+const qExplain = document.getElementById('qExplain');
+function renderQuiz(){
+  const q = quiz[qIndex];
+  qIndexEl.textContent = qIndex + 1;
+  qTotalEl.textContent = quiz.length;
+  qFill.style.width = `${((qIndex + 1) / quiz.length) * 100}%`;
+  qText.textContent = q.q;
+  qExplain.style.display = 'none';
+  qExplain.textContent = q.e;
+  qOpts.innerHTML = q.o.map((opt, i) => `<button class="quizopt" data-i="${i}">${opt}</button>`).join('');
+  picked = null;
+  qOpts.querySelectorAll('.quizopt').forEach(btn => btn.addEventListener('click', () => {
+    picked = +btn.dataset.i;
+    qOpts.querySelectorAll('.quizopt').forEach(b => b.classList.remove('ok', 'no'));
+    btn.classList.add('selected');
+  }));
 }
-
-function generateQuestions() {
-  currentPage = 0;
-  answered = {};
-  score = 0;
-  totalAnswered = 0;
-  // shuffle
-  filtered = [...qBank.all].sort(() => Math.random() - 0.5);
-  renderPage();
+function checkQuiz(){
+  const q = quiz[qIndex];
+  qOpts.querySelectorAll('.quizopt').forEach((btn, i) => {
+    btn.classList.remove('ok', 'no');
+    if(i === q.a) btn.classList.add('ok');
+    if(picked !== null && i === picked && picked !== q.a) btn.classList.add('no');
+  });
+  qExplain.style.display = 'block';
 }
+function nextQuiz(){ qIndex = (qIndex + 1) % quiz.length; renderQuiz(); }
+function prevQuiz(){ qIndex = (qIndex - 1 + quiz.length) % quiz.length; renderQuiz(); }
+function shuffleQuiz(){ quiz = quizData.slice().sort(() => Math.random() - 0.5); qIndex = 0; renderQuiz(); }
+document.getElementById('nextBtn').addEventListener('click', nextQuiz);
+document.getElementById('prevBtn').addEventListener('click', prevQuiz);
+document.getElementById('checkBtn').addEventListener('click', checkQuiz);
+document.getElementById('shuffleBtn').addEventListener('click', shuffleQuiz);
+renderQuiz();
 
-function renderPage() {
-  const start = currentPage * pageSize;
-  const end = Math.min(start + pageSize, filtered.length);
-  const container = document.getElementById('questionsContainer');
-  container.innerHTML = '';
-  for (let i = start; i < end; i++) {
-    const q = filtered[i];
-    const isAns = answered[i] !== undefined;
-    container.innerHTML += `
-      <div class="q-card">
-        <div class="q-num">Q${i+1} of ${filtered.length}</div>
-        <div class="q-text">${q.q}</div>
-        <div class="q-options">
-          ${q.opts.map((o,oi)=>`
-            <button class="q-opt ${isAns&&oi===q.ans?'correct':isAns&&oi===answered[i]&&oi!==q.ans?'wrong':''}"
-              onclick="answer(${i},${oi})" ${isAns?'disabled':''}>
-              ${String.fromCharCode(65+oi)}) ${o}
-            </button>`).join('')}
-        </div>
-        <div class="q-explanation" id="exp-${i}" style="${isAns?'display:block':''}">
-          💡 ${q.exp}
-        </div>
-      </div>`;
-  }
-  document.getElementById('progressLabel').textContent = `Questions ${start+1}–${end} of ${filtered.length}`;
-  const pct = Math.round((end / filtered.length) * 100);
-  document.getElementById('quizProgress').style.width = pct + '%';
-  updateScore();
+// FAQ
+const faq = [
+  ['Is this site free?','Yes, the portal is designed to be free for all students.'],
+  ['Can I use it on mobile?','Yes. The layout is responsive and works on phones, tablets, and desktop.'],
+  ['Will more content be added?','Yes. The structure is made for future expansion.'],
+  ['Does it include a login page?','No. This version intentionally excludes login.']
+];
+document.getElementById('faq').innerHTML = faq.map(([q,a]) => `
+  <div class="acc">
+    <div class="accq">${q}<span>+</span></div>
+    <div class="acca">${a}</div>
+  </div>`).join('');
+[...document.querySelectorAll('.accq')].forEach(q => q.addEventListener('click', () => {
+  const a = q.nextElementSibling;
+  const open = a.classList.contains('open');
+  document.querySelectorAll('.acca').forEach(x => x.classList.remove('open'));
+  document.querySelectorAll('.accq span').forEach(s => s.textContent = '+');
+  if(!open){ a.classList.add('open'); q.querySelector('span').textContent = '−'; }
+}));
+
+// Search and filter
+function applyFilter(){
+  const term = search.value.trim().toLowerCase();
+  const activeFilter = document.querySelector('.chip.active')?.dataset.filter || 'all';
+  const cards = [...document.querySelectorAll('.card')];
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const matchesTerm = !term || text.includes(term);
+    const tag = (card.querySelector('.tag')?.textContent || '').toLowerCase();
+    const matchesFilter = activeFilter === 'all' || tag.includes(activeFilter);
+    card.classList.toggle('hide', !(matchesTerm && matchesFilter));
+  });
 }
+search.addEventListener('input', applyFilter);
+chips.forEach(chip => chip.addEventListener('click', () => {
+  chips.forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  applyFilter();
+}));
 
-function answer(i, oi) {
-  if (answered[i] !== undefined) return;
-  answered[i] = oi;
-  totalAnswered++;
-  if (oi === filtered[i].ans) score++;
-  updateScore();
-  // update buttons
-  const cards = document.querySelectorAll('.q-card');
-  const start = currentPage * pageSize;
-  const cardIdx = i - start;
-  if (cardIdx >= 0 && cardIdx < cards.length) {
-    const btns = cards[cardIdx].querySelectorAll('.q-opt');
-    btns.forEach((b, bi) => {
-      b.disabled = true;
-      if (bi === filtered[i].ans) b.classList.add('correct');
-      else if (bi === oi) b.classList.add('wrong');
-    });
-    const exp = document.getElementById('exp-' + i);
-    if (exp) exp.style.display = 'block';
-  }
-}
-
-function updateScore() {
-  document.getElementById('scoreBadge').textContent = `Score: ${score} / ${totalAnswered}`;
-}
-
-function nextPage() {
-  const maxPage = Math.floor((filtered.length - 1) / pageSize);
-  if (currentPage < maxPage) { currentPage++; renderPage(); window.scrollTo({top:0,behavior:'smooth'}); }
-}
-
-function prevPage() {
-  if (currentPage > 0) { currentPage--; renderPage(); window.scrollTo({top:0,behavior:'smooth'}); }
-}
-
-// init
-generateQuestions();
+// Make home content searchable too
+applyFilter();
 </script>
 </body>
 </html>
